@@ -43,19 +43,35 @@ public class ServicePost {
         req = new ConnectionRequest();  
     }
     //ADD
+//    public void addPost(Post post){
+//        //&post_type=blog
+//        String url = Statics.Base_URL+"/post/newpostjson?id_user=1&id_category="+post.getCategory_p().getId_category()+"&description_p="
+//                +post.getDescription_p()+"&media="+post.getMedia()+"&title_p="+post.getTitle_p()+"&post_type="+post.getPost_type();
+//        
+//        req.setUrl(url);
+//        req.addResponseListener((e)->{
+//            
+//            String str = new String (req.getResponseData());//Response JSON THAT WE SAW IN THE NAVIGATOR 
+//            System.out.println("data=="+str);
+//        });
+//        NetworkManager.getInstance().addToQueueAndWait(req);//EXECUTION OF THE REQUEST OR NOTHING GO THROUGH 
+//    }
+    
     public void addPost(Post post){
-        //&post_type=blog
-        String url = Statics.Base_URL+"/post/newpostjson?id_user=1&id_category="+post.getCategory_p().getId_category()+"&description_p="
-                +post.getDescription_p()+"&media="+post.getMedia()+"&title_p="+post.getTitle_p()+"&post_type="+post.getPost_type();
+    //&post_type=blog
+    String url = Statics.Base_URL+"/post/newpostjson?id_user=1&id_category="+post.getCategory_p().getId_category()+"&description_p="
+            +post.getDescription_p()+"&media="+post.getMedia()+"&title_p="+post.getTitle_p()+"&post_type="+post.getPost_type();
+    
+    req.setUrl(url);
+    req.addResponseListener((e)->{
         
-        req.setUrl(url);
-        req.addResponseListener((e)->{
-            
-            String str = new String (req.getResponseData());//Response JSON THAT WE SAW IN THE NAVIGATOR 
-            System.out.println("data=="+str);
-        });
-        NetworkManager.getInstance().addToQueueAndWait(req);//EXECUTION OF THE REQUEST OR NOTHING GO THROUGH 
-    }
+        String str = new String (req.getResponseData());//Response JSON THAT WE SAW IN THE NAVIGATOR 
+        System.out.println("data=="+str);
+    });
+    NetworkManager.getInstance().addToQueueAndWait(req);//EXECUTION OF THE REQUEST OR NOTHING GO THROUGH 
+}
+
+    
     
     //Display postlike
         //Display postlike

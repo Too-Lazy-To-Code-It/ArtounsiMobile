@@ -52,7 +52,7 @@ import com.mycompany.utils.Statics;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
-import javafx.stage.FileChooser;
+import com.codename1.ext.filechooser.FileChooser;
 
 /**
  *
@@ -206,84 +206,188 @@ ComboBox<String> category_p = new ComboBox<>(categoryNames);
 addStringValue("Category", category_p);
 
 // Select Image button
-Button btnSelectImage = new Button("Select Image");
-btnSelectImage.addActionListener((evt) -> {
-    Display.getInstance().openGallery((ActionListener) (ActionEvent ev) -> {
-        if (ev != null && ev.getSource() != null) {
-            String filePath = (String) ev.getSource();
+//Button btnSelectImage = new Button("Select Image");
+//btnSelectImage.addActionListener((evt) -> {
+//    Display.getInstance().openGallery((ActionListener) (ActionEvent ev) -> {
+//        if (ev != null && ev.getSource() != null) {
+//            String filePath = (String) ev.getSource();
+//
+//            String mime = "image/jpeg";
+//            String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
+//            String newFileName = System.currentTimeMillis() + "." + extension;
+//
+//            Post post = new Post();
+//            post.setMedia(newFileName);
+//
+//            InfiniteProgress prog = new InfiniteProgress();
+//            Dialog dlg = prog.showInifiniteBlocking();
+//
+//            // Upload the file in a background thread
+//            Display.getInstance().callSerially(() -> {
+//                // Save the file in the device's storage directory
+//                String storageDir = FileSystemStorage.getInstance().getAppHomePath();
+//                String fileFullPath = storageDir + newFileName;
+//                try {
+//                    Util.copy(FileSystemStorage.getInstance().openInputStream(filePath), FileSystemStorage.getInstance().openOutputStream(fileFullPath));
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                Dialog.show("Success", "Image uploaded", "OK", null);
+//                dlg.dispose(); // dismiss the loading dialog
+//            });
+//        }
+//    }, Display.GALLERY_IMAGE);
+//});
+//
+//
+//add(btnSelectImage);
+//
+//// Add button
+//Button btnAdd = new Button("Add");
+//addStringValue("", btnAdd);
+//
+//// on click event of the Add button 
+//    btnAdd.addActionListener((e) ->{
+//        try {
+//            if(title_p.getText().equals("") || description_p.getText().equals("")){
+//                Dialog.show("Please fill all fields!", "", "OK", null);
+//            }
+//            else {
+//                InfiniteProgress ip = new InfiniteProgress(); //Loading after insert data
+//                final Dialog iDialog = ip.showInfiniteBlocking();
+//
+//                Post p = new Post();
+//                p.setTitle_p(title_p.getText());
+//                p.setDescription_p(description_p.getText());
+//                p.setPost_type(post_type.getSelectedItem());
+//                p.setCategory_p(categories.get(category_p.getSelectedIndex()));
+//
+//                String mediaPath = storageDir + p.getMedia();
+//                if (mediaPath != null && !mediaPath.isEmpty()) {
+//                    p.setPath(mediaPath);
+//                }
+//
+//                ServicePost.getInstance().addPost(p);
+//
+//                iDialog.dispose();//To Cancel Loading After The Adding 
+//
+////                new PostListForm(res).show();
+////
+////                refreshTheme();
+//            }
+//        } catch(Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        
+//    });
+//     }
+    
+//Button btnSelectImage = new Button("Select Image");
+//add(btnSelectImage);
 
-            String mime = "image/jpeg";
-            String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
-            String newFileName = System.currentTimeMillis() + "." + extension;
 
-            Post post = new Post();
-            post.setMedia(newFileName);
-
-            InfiniteProgress prog = new InfiniteProgress();
-            Dialog dlg = prog.showInifiniteBlocking();
-
-            // Upload the file in a background thread
-            Display.getInstance().callSerially(() -> {
-                // Save the file in the device's storage directory
-                String storageDir = FileSystemStorage.getInstance().getAppHomePath();
-                String fileFullPath = storageDir + newFileName;
-                try {
-                    Util.copy(FileSystemStorage.getInstance().openInputStream(filePath), FileSystemStorage.getInstance().openOutputStream(fileFullPath));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                Dialog.show("Success", "Image uploaded", "OK", null);
-                dlg.dispose(); // dismiss the loading dialog
-            });
-        }
-    }, Display.GALLERY_IMAGE);
-});
-
-
-add(btnSelectImage);
-
-// Add button
+//kinda fih tri9 s7i7
 Button btnAdd = new Button("Add");
 addStringValue("", btnAdd);
 
-// on click event of the Add button 
-    btnAdd.addActionListener((e) ->{
-        try {
-            if(title_p.getText().equals("") || description_p.getText().equals("")){
-                Dialog.show("Please fill all fields!", "", "OK", null);
+// Initialize the button to display an image
+Button photoButton = new Button("Attach Photo");
+photoButton.setTextPosition(Label.BOTTOM);
+add(photoButton);
+
+// Add a listener to the photo button that allows the user to select an image
+photoButton.addActionListener((ActionEvent e) -> {
+    if (FileChooser.isAvailable()) {
+        FileChooser.setOpenFilesInPlace(true);
+        FileChooser.showOpenDialog(".jpg,.jpeg,.png/plain", (ActionListener) (ActionEvent e2) -> {
+            if (e2 == null || e2.getSource() == null) {
+                add("No file was selected");
+                revalidate();
+                return;
             }
-            else {
-                InfiniteProgress ip = new InfiniteProgress(); //Loading after insert data
-                final Dialog iDialog = ip.showInfiniteBlocking();
+            String file = (String) e2.getSource();
+            String extension = null;
+            if (file.lastIndexOf(".") > 0) {
+                extension = file.substring(file.lastIndexOf(".") + 1);
+                StringBuilder hi = new StringBuilder(file);
 
-                Post p = new Post();
-                p.setTitle_p(title_p.getText());
-                p.setDescription_p(description_p.getText());
-                p.setPost_type(post_type.getSelectedItem());
-                p.setCategory_p(categories.get(category_p.getSelectedIndex()));
-
-                String mediaPath = storageDir + p.getMedia();
-                if (mediaPath != null && !mediaPath.isEmpty()) {
-                    p.setPath(mediaPath);
+                if (file.startsWith("file://")) {
+                } else {
+                    hi.delete(0, 7);
                 }
-
-                ServicePost.getInstance().addPost(p);
-
-                iDialog.dispose();//To Cancel Loading After The Adding 
-
-//                new PostListForm(res).show();
-//
-//                refreshTheme();
+                int lastIndexPeriod = hi.toString().lastIndexOf(".");
+                String ext = hi.toString().substring(lastIndexPeriod);
+                String hmore = hi.toString().substring(0, lastIndexPeriod - 1);
+                try {
+                    String namePic = saveFileToDevice(file, ext);
+                    System.out.println(namePic);
+                    photoButton.setBadgeText(namePic);
+                    Image logo = Image.createImage(file).scaledSmallerRatio(256, 256);
+                    photoButton.setIcon(logo);
+                } catch (IOException ex) {
+                }
             }
-        } catch(Exception ex) {
-            ex.printStackTrace();
+        });
+    }
+});
+
+// Add a listener to the "Add" button to create a new Post object and add it to the database
+btnAdd.addActionListener((e) -> {
+    try {
+        if (title_p.getText().equals("") || description_p.getText().equals("")) {
+            Dialog.show("Please fill all fields!", "", "OK", null);
+        } else {
+            InfiniteProgress ip = new InfiniteProgress();
+            final Dialog iDialog = ip.showInfiniteBlocking();
+
+            Post p = new Post();
+            p.setTitle_p(title_p.getText());
+            p.setDescription_p(description_p.getText());
+            p.setPost_type(post_type.getSelectedItem());
+            p.setCategory_p(categories.get(category_p.getSelectedIndex()));
+
+            // Set the path to the image file, if one was selected
+            String mediaPath = photoButton.getBadgeText();
+if (mediaPath != null && !mediaPath.isEmpty()) {
+    p.setMedia(mediaPath);
+}
+
+            ServicePost.getInstance().addPost(p);
+
+            iDialog.dispose();
         }
-        
-    });
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+});
+
      }
+/**
+ * Saves a file to the device's storage directory
+ *
+ * @param filePath the path to the file to be saved
+ * @param extension the file extension
+ * @return the name of the saved file
+ * @throws IOException if an error occurs while saving the file
+ */
+//private String saveFileToDevice(String filePath, String extension) throws IOException {
+//    String newFileName = System.currentTimeMillis() + "." + extension;
+//    String storageDir = FileSystemStorage.getInstance().getAppHomePath();
+//    String fileFullPath = storageDir + newFileName;
+//    Util.copy(FileSystemStorage.getInstance().openInputStream(filePath), FileSystemStorage.getInstance().openOutputStream(fileFullPath));
+//    return newFileName;
+//}
+     private String saveFileToDevice(String filePath, String extension) throws IOException {
+    String newFileName = System.currentTimeMillis() + extension;
+    String storageDir = FileSystemStorage.getInstance().getAppHomePath();
+    String fileFullPath = storageDir + newFileName;
+    Util.copy(FileSystemStorage.getInstance().openInputStream(filePath), FileSystemStorage.getInstance().openOutputStream(fileFullPath));
+    return newFileName;
+}
+
     
-    
+
        private void addStringValue(String s, Component v) {
         
         add(BorderLayout.west(new Label(s,"PaddedLabel"))
@@ -329,7 +433,8 @@ addStringValue("", btnAdd);
         
     }
      
-     
+  
+
      
     public void bindButtonSelection(Button btn , Label l ) {
 
