@@ -43,17 +43,44 @@ public class UserService {
 
     //ACTIONS
     //Add
+    public int Verif(String $Email) {
+        req = new ConnectionRequest();
+        final int[] code = {0};
+        JSONParser jp = new JSONParser();
+        String addURL = Statics.Base_URL + "/json/vf";
+        req.setUrl(addURL);
+        req.setPost(false);
+        req.addArgument("Email", $Email + "");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                String jsonText = new String(req.getResponseData());
+                try {
+                    Map<String, Object> userJSON = jp.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+                    code[0] = ((Double) userJSON.get("code")).intValue();
+                    System.out.println("CODE SERVICE : "+ code[0]);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        NetworkManager.getInstance().addToQueueAndWait(req);
+
+
+        return code[0];
+    }
+
     public boolean addUser(AllUsers u) {
 
+        req = new ConnectionRequest();
         //1
         String addURL = Statics.Base_URL + "/json/new";
 
         //2
         req.setUrl(addURL);
-
         //3
         req.setPost(false);
-
         //4
         req.addArgument("Name", u.getName());
         req.addArgument("LastName", u.getLast_Name() + "");
@@ -63,9 +90,6 @@ public class UserService {
         req.addArgument("password", u.getPassword() + "");
         req.addArgument("Nationality", u.getNationality());
         req.addArgument("type", u.getType() + "");
-
-
-
         //5
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -74,7 +98,6 @@ public class UserService {
                 req.removeResponseListener(this);
             }
         });
-
         NetworkManager.getInstance().addToQueueAndWait(req);
 
         return resultOK;
@@ -170,6 +193,7 @@ public class UserService {
     }
 
     public boolean Edituser(AllUsers u) {
+        req = new ConnectionRequest();
 
         //1
         String addURL = Statics.Base_URL + "/json/" + u.getID_User() + "/edit";
@@ -188,6 +212,8 @@ public class UserService {
         req.addArgument("Password", u.getPassword() + "");
         req.addArgument("Nationality", u.getNationality());
         req.addArgument("type", u.getType() + "");
+        req.addArgument("number", u.getNum() + "");
+
         //5
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -216,13 +242,17 @@ public class UserService {
             u.setPassword((String) userJSON.get("password"));
             u.setType((String) userJSON.get("type"));
             u.setBirthday((String) userJSON.get("Birthday"));
+            u.setNum((String) userJSON.get("number"));
         } catch (IOException ignored) {
         }
         return u;
     }
-    public AllUsers login(AllUsers u) {
+
+    public int login(AllUsers u) {
+        final int[] code = {0};
+        JSONParser jp = new JSONParser();
+        req = new ConnectionRequest();
         String url = Statics.Base_URL + "/json/Login";
-        ConnectionRequest req = new ConnectionRequest();
         req.setUrl(url);
         req.addArgument("Email", u.getEmail());
         req.addArgument("password", u.getPassword());
@@ -232,13 +262,22 @@ public class UserService {
             @Override
             public void actionPerformed(NetworkEvent evt) {
                 user[0] = parseuser(new String(req.getResponseData()));
+                String jsonText = new String(req.getResponseData());
+                Map<String, Object> userJSON = null;
+                try {
+                    userJSON = jp.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+               code[0] = ((Double) userJSON.get("code")).intValue();
                 req.removeResponseListener(this);
             }
         });
 
         NetworkManager.getInstance().addToQueueAndWait(req);
-        CurrentUser=user[0];
-        return user[0];
+        System.out.println(user[0]);
+        CurrentUser = user[0];
+        return code[0];
     }
 
 

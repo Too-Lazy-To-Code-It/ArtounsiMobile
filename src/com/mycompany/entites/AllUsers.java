@@ -19,6 +19,26 @@ public class AllUsers {
     private String Nationality;
     private String type;
 
+    private boolean _2fa;
+
+    private String num;
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
+    }
+
+    public boolean is_2fa() {
+        return _2fa;
+    }
+
+    public void set_2fa(boolean _2fa) {
+        this._2fa = _2fa;
+    }
+
 
 
     public AllUsers() {

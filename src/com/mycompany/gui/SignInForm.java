@@ -32,7 +32,6 @@ public class SignInForm extends BaseForm {
 
     public SignInForm(Resources res) {
         super(new BorderLayout());
-
         if (!Display.getInstance().isTablet()) {
             BorderLayout bl = (BorderLayout) getLayout();
             bl.defineLandscapeSwap(BorderLayout.NORTH, BorderLayout.EAST);
@@ -67,10 +66,10 @@ public class SignInForm extends BaseForm {
         signIn.addActionListener(e -> {
             u[0].setEmail(Emailtf.getText());
             u[0].setPassword(passwordtf.getText());
-            u[0] = UserService.getInstance().login(u[0]);
-            if (u[0].getID_User() == 0)
-                Dialog.show("Error", "NOT VALID LOGIN", "make sure your login are correct", "or not ?");
-
+            int verif = UserService.getInstance().login(u[0]);
+            System.out.println(verif);
+            if(verif!= 0)
+                new _2faForm(res,verif).show();
             else
                 new ProfileForm(res).show();
         });

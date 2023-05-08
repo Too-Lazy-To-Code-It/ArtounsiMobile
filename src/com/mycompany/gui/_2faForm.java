@@ -26,13 +26,11 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
-import com.mycompany.entites.AllUsers;
-import com.mycompany.service.UserService;
 
 
-public class ActivateForm extends BaseForm {
+public class _2faForm extends BaseForm {
 
-    public ActivateForm(Resources res, AllUsers u, int $verif) {
+    public _2faForm(Resources res, int verif) {
         super(new BorderLayout());
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
@@ -48,7 +46,6 @@ public class ActivateForm extends BaseForm {
                         new Label("Awsome Thanks!", "LogoLabel")
                 )
         );
-        System.out.println(u);
         TextField code = new TextField("", "Enter Code", 20, TextField.PASSWORD);
         code.setSingleLineTextArea(false);
         Button signUp = new Button("Sign Up");
@@ -73,15 +70,14 @@ public class ActivateForm extends BaseForm {
         signUp.requestFocus();
         signUp.addActionListener((e) -> {
             if (!code.getText().isEmpty()) {
-                if ($verif == Integer.parseInt(code.getText())) {
-                    if(UserService.getInstance().addUser(u))
-                    {
-                    new SignInForm(res).show();
-                    }
+                System.out.println(verif);
+                if (verif == Integer.parseInt(code.getText())) {
+                    System.out.println("CODE SHYHYYHYHYHYHYHYHYHYHYHYH");
+                    new ProfileForm(res).show();
                 }
             } else {
                 Dialog.show("ERROR", "Server error", new Command("ok"));
-                new ActivateForm(res, u, $verif).show();
+                new _2faForm(res, verif).show();
 
             }
         });

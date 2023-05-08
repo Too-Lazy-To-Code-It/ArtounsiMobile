@@ -26,6 +26,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.entites.AllUsers;
+import com.mycompany.service.UserService;
 
 public class SignUpForm extends BaseForm {
 
@@ -91,8 +92,10 @@ public class SignUpForm extends BaseForm {
         next.requestFocus();
         System.out.println(emailtf.getText());
         next.addActionListener(e -> {
+            int $verif;
             AllUsers u = new AllUsers(Nametf.getText(), LastNametf.getText(), usernametf.getText(), emailtf.getText(), "2000-04-04", passwordtf.getText(), Nationalitytf.getText(), Typetf.getText());
-            new ActivateForm(res, u).show();
+                $verif = UserService.getInstance().Verif(emailtf.getText());
+                new ActivateForm(res, u, $verif).show();
         });
     }
 

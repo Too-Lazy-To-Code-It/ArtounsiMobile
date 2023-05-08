@@ -88,9 +88,9 @@ public class ProfileForm extends BaseForm {
         email.setUIID("TextFieldBlack");
         addStringValue("E-Mail", email);
 
-        TextField password = new TextField("sandeep", "Password", 20, TextField.PASSWORD);
-        password.setUIID("TextFieldBlack");
-        addStringValue("Password", password);
+        TextField number = new TextField(UserService.getInstance().CurrentUser.getNum());
+        number.setUIID("TextFieldBlack");
+        addStringValue("number", number);
 
         CheckBox cb1 = CheckBox.createToggle(res.getImage("on-off-off.png"));
         cb1.setUIID("Label");
@@ -105,8 +105,12 @@ public class ProfileForm extends BaseForm {
             UserService.getInstance().CurrentUser.setName(name.getText());
             UserService.getInstance().CurrentUser.setLast_Name(LastName.getText());
             UserService.getInstance().CurrentUser.setNickname(nickname.getText());
+            UserService.getInstance().CurrentUser.setNum(number.getText());
+            if(!number.getText().isEmpty()){
+                UserService.getInstance().CurrentUser.set_2fa(true);
+                System.out.println("seggs");}
             UserService.getInstance().Edituser(UserService.getInstance().CurrentUser);
-            new ProfileForm(res).showBack();
+            new ProfileForm(res).show();
         });
     }
 
