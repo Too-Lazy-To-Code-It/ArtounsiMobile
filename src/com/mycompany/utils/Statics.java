@@ -12,6 +12,7 @@ package com.mycompany.utils;
 public class Statics {
     
     public static final String Base_URL="http://localhost:8000";
+    public static String BASE_URL = "http://127.0.0.1:8000";
     public static final String URL_UPLOAD = Base_URL + "imageServer.php";
     public static final String URL_REP_IMAGES = Base_URL + "img/";
 }

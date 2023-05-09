@@ -85,12 +85,15 @@ public class BaseForm extends Form {
         tb.addMaterialCommandToSideMenu("Users", FontImage.MATERIAL_UPDATE, e -> new Showoffres(res).show());
         tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, e -> new ProfileForm(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new SignInForm(res).show());
+        tb.addMaterialCommandToSideMenu("SHOP", FontImage.MATERIAL_UPDATE, e -> new AfficherProdForm(res).show());
+        tb.addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new AfficherPanier(res).show());
         tb.addMaterialCommandToSideMenu("offres", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showoffres(res).show());
       tb.addMaterialCommandToSideMenu("demandes", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showdemandes(res).show());
       tb.addMaterialCommandToSideMenu("Newsfeed", FontImage.MATERIAL_EXIT_TO_APP, e ->new NewsfeedForm(res).show());
       tb.addMaterialCommandToSideMenu("Add Post", FontImage.MATERIAL_EXIT_TO_APP, e ->new AddPost(res).show());
       tb.addMaterialCommandToSideMenu("Map", FontImage.MATERIAL_EXIT_TO_APP, e ->new MapForm(res));
       tb.addMaterialCommandToSideMenu("Add Category", FontImage.MATERIAL_EXIT_TO_APP, e ->new AddCategory(res).show());
+      
       
     }
 }
