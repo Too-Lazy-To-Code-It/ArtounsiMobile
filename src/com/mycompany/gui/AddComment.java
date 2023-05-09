@@ -50,7 +50,7 @@ public class AddComment extends BaseForm{
         current = this ;
         setToolbar(tb);
         getTitleArea().setUIID("Container");
-        setTitle("Add Comment");
+        setTitle("Ajouter un commentaire");
         getContentPane().setScrollVisible(false);
         
         
@@ -106,7 +106,7 @@ public class AddComment extends BaseForm{
         add(LayeredLayout.encloseIn(swipe, radioContainer));
 
         ButtonGroup barGroup = new ButtonGroup();
-        RadioButton mesListes = RadioButton.createToggle("Post Comments", barGroup);
+        RadioButton mesListes = RadioButton.createToggle("Home Page", barGroup);
         mesListes.setUIID("SelectBar");
         RadioButton liste = RadioButton.createToggle("Others", barGroup);
         liste.setUIID("SelectBar");
@@ -121,7 +121,8 @@ public class AddComment extends BaseForm{
         
         //  ListReclamationForm a = new ListReclamationForm(res);
           //  a.show();
-            refreshTheme();
+//            refreshTheme();
+new NewsfeedForm(res).show(); 
         });
 
         add(LayeredLayout.encloseIn(

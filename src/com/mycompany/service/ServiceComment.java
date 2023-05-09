@@ -48,7 +48,7 @@ public class ServiceComment {
         public void addComment(int id_post,Comment comment){
         //&post_type=blog
         //String url = Statics.Base_URL+"/comment/newjson/"+comment.getId_post()+"?&id_user=1&comment="+comment.getComment();
-        String url = Statics.Base_URL+"/comment/newjson/"+id_post+"?&id_user=1&comment="+comment.getComment();
+        String url = Statics.Base_URL+"/comment/newjson/"+id_post+"?&id_user="+UserService.getInstance().CurrentUser.getID_User()+"&comment="+comment.getComment();
         
         req.setUrl(url);
         req.addResponseListener((e)->{

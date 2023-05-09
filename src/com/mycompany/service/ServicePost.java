@@ -45,7 +45,7 @@ public class ServicePost {
     
     public void addPost(Post post){
     //&post_type=blog
-    String url = Statics.Base_URL +"/post/newpostjson?id_user=1&id_category="+post.getCategory_p().getId_category()+"&description_p="
+    String url = Statics.Base_URL +"/post/newpostjson?id_user="+UserService.getInstance().CurrentUser.getID_User()+"&id_category="+post.getCategory_p().getId_category()+"&description_p="
             +post.getDescription_p()+"&media="+post.getMedia()+"&title_p="+post.getTitle_p()+"&post_type="+post.getPost_type();
     
     req.setUrl(url);

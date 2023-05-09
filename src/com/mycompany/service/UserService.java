@@ -273,7 +273,7 @@ public class UserService {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                if(userJSON.get("code")==null || (String)userJSON.get("code")=="")
+                if(userJSON.get("code")==null || userJSON.get("code") =="")
                     code[0]=0;
                 else
                code[0] = ((Double) userJSON.get("code")).intValue();
