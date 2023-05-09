@@ -5,9 +5,12 @@
  */
 package com.mycompany.gui;
 
+import com.codename1.components.InfiniteProgress;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
 import com.codename1.components.ToastBar;
+import com.codename1.io.FileSystemStorage;
+import com.codename1.io.Util;
 import com.codename1.ui.Button;
 import com.codename1.ui.ButtonGroup;
 import com.codename1.ui.ComboBox;
@@ -27,6 +30,8 @@ import com.codename1.ui.RadioButton;
 import com.codename1.ui.Tabs;
 import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
+import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
@@ -40,6 +45,7 @@ import com.mycompany.entites.grosmot;
 import com.mycompany.service.ServiceCategory;
 import com.mycompany.service.demandeservice;
 import com.mycompany.service.grosmotservice;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -70,7 +76,7 @@ public class editdemande  extends BaseForm {
 
         Label spacer1 = new Label();
         Label spacer2 = new Label();
-        addTab(swipe, res.getImage("simon-tosovsky-magicpowder-02.jpg"), spacer1, " ", "85 ", "Mes offres d'emplois");
+        addTab(swipe, res.getImage("simon-tosovsky-magicpowder-02.jpg"), spacer1, " ", "85 ", "Modifier demande d'emplois");
       
                 
         swipe.setUIID("Container");
@@ -169,6 +175,45 @@ ComboBox<String> categorieTF = new ComboBox<>(categoryNames);
         Button submitBtn = new Button("modifier");
         
 
+          Button pdfa = new Button("Select pdf");
+pdfa.addActionListener((evt) -> {
+    Display.getInstance().openGallery((ActionListener) (ActionEvent ev) -> {
+        if (ev != null && ev.getSource() != null) {
+            String filePath = (String) ev.getSource();
+
+            String mime = "pdf";
+            String extension = filePath.substring(filePath.lastIndexOf(".") + 1);
+            String newFileName = System.currentTimeMillis() + "." + extension;
+
+           demande f = new demande();
+            f.setPdf(newFileName);
+
+            InfiniteProgress prog = new InfiniteProgress();
+            Dialog dlg = prog.showInifiniteBlocking();
+
+            // Upload the file in a background thread
+            Display.getInstance().callSerially(() -> {
+                // Save the file in the device's storage directory
+                String storageDir = FileSystemStorage.getInstance().getAppHomePath();
+                String fileFullPath = storageDir + newFileName;
+                try {
+                    Util.copy(FileSystemStorage.getInstance().openInputStream(filePath), FileSystemStorage.getInstance().openOutputStream(fileFullPath));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Dialog.show("Success", "pdf uploaded", "OK", null);
+                dlg.dispose(); // dismiss the loading dialog
+            });
+        }
+    }, Display.GALLERY_ALL);
+});
+
+          
+          
+      
+          pdf.setUIID("NewsTopLine");
+         
         //actions
         submitBtn.addActionListener((evt) -> {
              if (titreTF.getText().isEmpty() || descriptionTF.getText().isEmpty() ) {
@@ -179,7 +224,7 @@ else
     if(grosmotser.grosMots(descriptionTF.getText())){ Dialog.show("Failed", "ATTENTION !! Vous avez écrit un gros mot dans la description.C'est un avertissement ! Priére d'avoir un peu de respect ! ", "Got it", null);}
 
      else  
-             if (ts.Editdemande(new demande(t.getIdDemande(),titreTF.getText(),descriptionTF.getText(),pdf.getText() ,categorieTF.getSelectedIndex()))) {
+             if (ts.Editdemande(new demande(t.getIdDemande(),titreTF.getText(),descriptionTF.getText(),pdfa.getText() ,categorieTF.getSelectedIndex()))) {
                 Dialog.show("Success", "offre modifier avec succes", "Got it", null);
                  new Showmesoffres(res).show();
             } else {
@@ -188,7 +233,7 @@ else
         });
 
         //end
-        this.addAll(titreTF, descriptionTF,categorieTF, submitBtn);
+        this.addAll(titreTF, descriptionTF,pdfa,categorieTF, submitBtn);
 
     }
 private void addTab(Tabs swipe, Image img, Label spacer, String likesStr, String commentsStr, String text) {

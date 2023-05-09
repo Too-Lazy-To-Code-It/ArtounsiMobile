@@ -74,7 +74,7 @@ public class Showdemandes extends BaseForm {
 
         Label spacer1 = new Label();
         Label spacer2 = new Label();
-        addTab(swipe, res.getImage("simon-tosovsky-magicpowder-02.jpg"), spacer1, " ", " ", "Les offres demandes");
+        addTab(swipe, res.getImage("simon-tosovsky-magicpowder-02.jpg"), spacer1, " ", " ", "Les demandes");
       
                 
         swipe.setUIID("Container");
