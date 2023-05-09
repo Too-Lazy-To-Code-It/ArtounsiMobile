@@ -34,10 +34,13 @@ import com.codename1.ui.layouts.GridLayout;
 import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
+import com.mycompany.entites.Category;
 import com.mycompany.entites.Offre;
 import com.mycompany.entites.grosmot;
 import com.mycompany.service.OffreService;
+import com.mycompany.service.ServiceCategory;
 import com.mycompany.service.grosmotservice;
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -45,9 +48,10 @@ import java.util.List;
  */
 public class editoffreForm  extends BaseForm {
     
-   grosmotservice grosmotser = grosmotservice.getInstance();
-   List<grosmot> listBadWords =grosmotser.fetchmot();
+  private ArrayList<Category> categories;
   OffreService ts = OffreService.getInstance();
+    grosmotservice grosmotser = grosmotservice.getInstance();
+   List<grosmot> listBadWords =grosmotser.fetchmot();
     public editoffreForm(Offre t,Resources res) {
       
       
@@ -143,8 +147,23 @@ public class editoffreForm  extends BaseForm {
         //getStyle().setBgTransparency(255);
         TextField descriptionTF = new TextField(t.getDescriptionoffre() + "", "description offre", 20, TextField.ANY);
         descriptionTF.setUIID("NewsTopLine");
-       TextField categorieTF = new TextField(String.valueOf(t.getIdcategorie()), "categorieTF", 20, TextField.ANY);
-       categorieTF.setUIID("NewsTopLine");
+      
+         
+            // Get the list of categories from the ServiceCategory class
+ServiceCategory sc = new ServiceCategory();
+categories = (ArrayList<Category>) sc.fetchCategory();
+
+// Create an array of category names
+String[] categoryNames = new String[categories.size()];
+for (int i = 0; i < categories.size(); i++) {
+    categoryNames[i] = categories.get(i).getName_category();
+}
+
+// Create a ComboBox to hold the categories
+ComboBox<String> categorieTF = new ComboBox<>(categoryNames);
+            
+
+
 
 
        
@@ -167,7 +186,8 @@ String[] loc = {"Tunis", "Algerie","France"};
         Button submitBtn = new Button("modifier");
         
 
-     submitBtn.addActionListener((evt) -> {
+        //actions
+        submitBtn.addActionListener((evt) -> {
              if (titreTF.getText().isEmpty() || descriptionTF.getText().isEmpty() ) {
     Dialog.show("Error", "Veuillez remplir tous les champs!", "OK", null);
             } else
@@ -176,7 +196,7 @@ else
     if(grosmotser.grosMots(descriptionTF.getText())){ Dialog.show("Failed", "ATTENTION !! Vous avez écrit un gros mot dans la description.C'est un avertissement ! Priére d'avoir un peu de respect ! ", "Got it", null);}
 
      else  
-             if (ts.Editoffre(new Offre(t.getIdoffre(),titreTF.getText(),descriptionTF.getText(), typeoffreTF.getText(), localisationTF.getText(), Integer.parseInt(categorieTF.getText())))) {
+             if (ts.Editoffre(new Offre(t.getIdoffre(),titreTF.getText(),descriptionTF.getText(), typeoffreTF.getText(), localisationTF.getText(), categorieTF.getSelectedIndex()))) {
                 Dialog.show("Success", "offre modifier avec succes", "Got it", null);
                  new Showmesoffres(res).show();
             } else {
