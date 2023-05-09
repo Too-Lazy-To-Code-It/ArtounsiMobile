@@ -5,6 +5,7 @@
  */
 package com.mycompany.gui;
 
+import com.codename1.components.ImageViewer;
 import com.codename1.components.InfiniteProgress;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
@@ -37,9 +38,11 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.mycompany.entites.Category;
+import com.mycompany.entites.Comment;
 import com.mycompany.entites.Post;
 import com.mycompany.service.ServiceCategory;
 import com.mycompany.service.ServicePost;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -56,7 +59,7 @@ public class PostListForm extends BaseForm{
         current = this ;
         setToolbar(tb);
         getTitleArea().setUIID("Container");
-        setTitle("Add Category");
+        setTitle("Explore");
         getContentPane().setScrollVisible(false);
         
         
@@ -112,11 +115,11 @@ public class PostListForm extends BaseForm{
         add(LayeredLayout.encloseIn(swipe, radioContainer));
 
         ButtonGroup barGroup = new ButtonGroup();
-        RadioButton mesListes = RadioButton.createToggle("My Categories", barGroup);
+        RadioButton mesListes = RadioButton.createToggle("NewsfeedForm", barGroup);
         mesListes.setUIID("SelectBar");
-        RadioButton liste = RadioButton.createToggle("Others", barGroup);
+        RadioButton liste = RadioButton.createToggle("Blog", barGroup);
         liste.setUIID("SelectBar");
-        RadioButton partage = RadioButton.createToggle("Category", barGroup);
+        RadioButton partage = RadioButton.createToggle("Explore", barGroup);
         partage.setUIID("SelectBar");
         Label arrow = new Label(res.getImage("news-tab-down-arrow.png"), "Container");
         
@@ -128,7 +131,12 @@ public class PostListForm extends BaseForm{
         
         //  ListReclamationForm a = new ListReclamationForm(res);
           //  a.show();
-            refreshTheme();
+            //refreshTheme();
+            new NewsfeedForm(res).show(); 
+        });
+        
+        liste.addActionListener((e) -> {
+             new BlogListForm(res).show();
         });
 
         add(LayeredLayout.encloseIn(
@@ -154,18 +162,22 @@ public class PostListForm extends BaseForm{
         //CALLLING DISPLAY METHOD 
         ArrayList<Post>List = ServicePost.getInstance().displayPost();
         for(Post post: List){
-            String urlImage = "simon-tosovsky-magicpowder-02.jpg";
-            Image placeHolder = Image.createImage(120,90);
-            EncodedImage enc =  EncodedImage.createFromImage(placeHolder, false);
-            URLImage urlim = URLImage.createToStorage(enc, urlImage, urlImage, URLImage.RESIZE_SCALE);
-            
-            addButton(urlim,post,res);
-            
-            ScaleImageLabel image = new ScaleImageLabel(urlim);
-            
-            Container containerImg = new Container();
-            
-            image.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
+            Comment cat = new Comment();
+//                if(post.getPost_type()=="blog"){
+                
+                String urlImage = "simon-tosovsky-magicpowder-02.jpg";
+                Image placeHolder = Image.createImage(120,90);
+                EncodedImage enc =  EncodedImage.createFromImage(placeHolder, false);
+                URLImage urlim = URLImage.createToStorage(enc, urlImage, urlImage, URLImage.RESIZE_SCALE);
+                addButton(urlim,post,res, post.getId_post(),cat);
+
+                ScaleImageLabel image = new ScaleImageLabel(urlim);
+
+                Container containerImg = new Container();
+                //System.out.println("mmmmmm"+post.getPost_type());
+                image.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
+//            }
+
         }
 
         
@@ -228,17 +240,47 @@ public class PostListForm extends BaseForm{
         l.getParent().repaint();
     }
     
-    private void addButton(Image img, Post post, Resources res) {    
+    private void addButton(Image img, Post post, Resources res, int id_post,Comment cat) {    
         int height = Display.getInstance().convertToPixels(11.5f);
         int width = Display.getInstance().convertToPixels(14f);
         Button image = new Button(img.fill(width, height));
         image.setUIID("Label");
         Container cnt = BorderLayout.west(image);
         TextArea ta = new TextArea(post.getTitle_p());
+        TextArea desc = new TextArea(post.getDescription_p());
+        
+       // PostLike postlike = new PostLike();
+        
         ta.setUIID("NewsTopLine");
         ta.setEditable(false);
         Label categorynameTxt = new Label("Post Title : "+post.getTitle_p(),"NewsTopLine2" );
+        Label descriptionTxt = new Label("Post Description : "+post.getDescription_p(),"NewsTopLine2" );
+        //Label IntlikeTxt = new Label("Postlike  : "+postlike.getId_like(),"NewsTopLine2" );
        // cnt.add(BorderLayout.CENTER, BoxLayout.encloseY(BoxLayout.encloseX(categorynameTxt)));
+       Label mediaTxt = new Label("Post media : "+post.getMedia(),"NewsTopLine2" );
+       
+       ImageViewer imgg = null;
+        EncodedImage enc = null;
+        Image imgs;
+        ImageViewer imgv;
+        String url = post.getMedia();
+        
+        
+        try {
+            //Image image = Image.createImage("http://localhost/img/" + t.getPathimg());
+            enc = EncodedImage.create("/load.png");
+        } catch (IOException ex) {
+
+        }
+        
+        imgs = URLImage.createToStorage(enc, url, url, URLImage.RESIZE_SCALE);
+        imgg = new ImageViewer(imgs);
+        
+         image.addActionListener(e -> {
+            new CommentListForm(res, id_post).show();
+            System.out.println("hello");
+        });
+
         
         //DELETE BUTTON
         Label lSupprimer = new Label(" ");
@@ -256,14 +298,14 @@ public class PostListForm extends BaseForm{
         lSupprimer.addPointerPressedListener(l -> {
             
              Dialog dig = new Dialog("Delete");
-            if(dig.show("Delete","Do You Want To Delete This Category","Cancel","Yes")){
+            if(dig.show("Delete","Do You Want To Delete This Post","Cancel","Yes")){
                 dig.dispose();
             }else {
                 dig.dispose();
                 
                 //CALLING THE DELETE METHOD FROM SERVICECATEGRY
-                if(ServiceCategory.getInstance().deleteCategory(post.getId_post())) {
-                    new CategoryListForm(res).show();
+                if(ServicePost.getInstance().deletePost(post.getId_post())) {
+                    new PostListForm(res).show();
                 }
             }
            
@@ -283,15 +325,47 @@ public class PostListForm extends BaseForm{
          lModifer.addPointerPressedListener(l -> {
       
              //System.out.println("Hello Update");
-            // new UpdateCategoryForm(res,post).show();
+             //new UpdateCategoryForm(res,post).show();
+             new UpdatePostForm(res, post).show();
         });
 
-        cnt.add(BorderLayout.CENTER,BoxLayout.encloseY(
-                BoxLayout.encloseX(categorynameTxt,lModifer,lSupprimer)));
+         Label likes = new Label( " Add Comment  ", "NewsBottomLine");
+          likes.setTextPosition(RIGHT);
+          FontImage.setMaterialIcon(likes, FontImage.MATERIAL_CHAT);
+          
+          likes.addPointerPressedListener(l -> {
+      
+             //System.out.println("Hello Update");
+             //new UpdateCategoryForm(res,post).show();
+             //new AddComment(res, post).show();
+             System.out.println("id_post"+id_post);
+             new AddComment(res, id_post).show();
+            
+        });
+          
+              Label like = new Label( " Show Comment  ", "NewsBottomLine");
+          like.setTextPosition(RIGHT);
+          FontImage.setMaterialIcon(like, FontImage.MATERIAL_CHAT);
+          
+          like.addPointerPressedListener(l -> {
+      
+             //System.out.println("Hello Update");
+             //new UpdateCategoryForm(res,post).show();
+             //new MapForm();
+              System.out.println("byeeeeeeeee");
+              new CommentListForm(res, id_post).show();
+        });
+         
+         
+        cnt.add(BorderLayout.WEST,BoxLayout.encloseY(
+                BoxLayout.encloseY(categorynameTxt,descriptionTxt,imgg,lModifer,lSupprimer,likes,like)));
         add(cnt);
         
 
     }
+    
+    
+    
  }
     
 

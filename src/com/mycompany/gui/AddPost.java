@@ -191,7 +191,7 @@ addStringValue("Post", post_type);
 
 // Get the list of categories from the ServiceCategory class
 ServiceCategory sc = new ServiceCategory();
-categories = sc.displayCategory();
+categories = (ArrayList<Category>) sc.fetchCategory();
 
 // Create an array of category names
 String[] categoryNames = new String[categories.size()];
@@ -201,6 +201,7 @@ for (int i = 0; i < categories.size(); i++) {
 
 // Create a ComboBox to hold the categories
 ComboBox<String> category_p = new ComboBox<>(categoryNames);
+
 
 // Add the ComboBox to the form
 addStringValue("Category", category_p);

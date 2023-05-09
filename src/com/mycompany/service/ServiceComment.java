@@ -58,21 +58,7 @@ public class ServiceComment {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);//EXECUTION OF THE REQUEST OR NOTHING GO THROUGH 
     }
-        
-    //DISPLAY COMMENT
-//        public void displayComment(Comment comment){
-//        String url = Statics.Base_URL+"/comment/JSONCOMMENTSHOW/26?";
-//        req.setUrl(url);
-//        req.addResponseListener((e)->{
-//            
-//            String str = new String (req.getResponseData());//Response JSON THAT WE SAW IN THE NAVIGATOR 
-//            System.out.println("data=="+str);
-//        });
-//        NetworkManager.getInstance().addToQueueAndWait(req);//EXECUTION OF THE REQUEST OR NOTHING GO THROUGH 
-//        }
-        
-        
-        
+
         //For Test
       //  int postId = 1;
     public ArrayList<Comment> displayComment(int postId) {
@@ -146,4 +132,3 @@ String url = Statics.Base_URL + "/comment/JSONCOMMENTSHOW/" + postId;
     }
 
 }
-
