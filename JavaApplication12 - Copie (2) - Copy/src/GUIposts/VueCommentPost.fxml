@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="commentAnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUIposts.VueCommentPostController">
+<AnchorPane id="AnchorPane" fx:id="commentAnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.VueCommentPostController">
     
     <VBox prefWidth="600.0">
         
@@ -30,7 +30,7 @@
          <Image url="@../Image/erakbackground.jpg" />
       </image>
    </ImageView>
-   <Button layoutX="740.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: C10C99;" text="Return" textFill="WHITE">
+   <Button layoutX="740.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: C10C99;" text="Retour" textFill="WHITE">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>

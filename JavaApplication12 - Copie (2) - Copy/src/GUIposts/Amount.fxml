@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.AmountController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.AmountController">
      <children>
         
-        <Label alignment="CENTER" layoutX="877.0" layoutY="50.0" prefHeight="35.0" prefWidth="352.0" text="Enter Amount " textFill="WHITE">
+        <Label alignment="CENTER" layoutX="877.0" layoutY="50.0" prefHeight="35.0" prefWidth="352.0" text="Entrer le montant" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Label>
-        <Button layoutX="1102.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleDonate" prefHeight="46.0" prefWidth="201.0" style="-fx-background-color: C10C99;" text="Donate" textFill="WHITE">
+        <Button layoutX="1102.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleDonate" prefHeight="46.0" prefWidth="201.0" style="-fx-background-color: C10C99;" text="Donner" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-        <Label layoutX="877.0" layoutY="240.0" prefHeight="27.0" prefWidth="150.0" text="Amount :" textFill="WHITE">
+        <Label layoutX="877.0" layoutY="240.0" prefHeight="27.0" prefWidth="150.0" text="Montant :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Label>
@@ -29,7 +29,7 @@
             <Image url="@../Image/erakbackground.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="877.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="46.0" prefWidth="202.0" style="-fx-background-color: C10C99;" text="Return" textFill="WHITE">
+      <Button layoutX="877.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="46.0" prefWidth="202.0" style="-fx-background-color: C10C99;" text="Retour" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

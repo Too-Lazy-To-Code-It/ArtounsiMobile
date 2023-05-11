@@ -8,19 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.AddCategoryController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.AddCategoryController">
 
     <children>
         
-        <Label alignment="CENTER" layoutX="877.0" layoutY="50.0" prefHeight="35.0" prefWidth="352.0" text="Add Category" textFill="WHITE">
+        <Label alignment="CENTER" layoutX="877.0" layoutY="50.0" prefHeight="35.0" prefWidth="352.0" text="Ajouter une catégorie" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Label>
-        <Button layoutX="1102.0" layoutY="332.0" mnemonicParsing="false" onAction="#AddCategory" prefHeight="46.0" prefWidth="201.0" style="-fx-background-color: C10C99;" text="Add" textFill="WHITE">
+        <Button layoutX="1102.0" layoutY="332.0" mnemonicParsing="false" onAction="#AddCategory" prefHeight="46.0" prefWidth="201.0" style="-fx-background-color: C10C99;" text="Ajouter" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-        <Label layoutX="877.0" layoutY="240.0" prefHeight="27.0" prefWidth="150.0" text="Category :" textFill="WHITE">
+        <Label layoutX="877.0" layoutY="240.0" prefHeight="27.0" prefWidth="150.0" text="Catégorie :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Label>
@@ -30,7 +30,7 @@
             <Image url="@../Image/erakbackground.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="877.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="46.0" prefWidth="202.0" style="-fx-background-color: C10C99;" text="Return" textFill="WHITE">
+      <Button layoutX="877.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="46.0" prefWidth="202.0" style="-fx-background-color: C10C99;" text="Retour" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

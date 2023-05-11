@@ -17,7 +17,7 @@
       <Pane layoutY="248.0" prefHeight="29.0" prefWidth="1386.0" style="-fx-background-color: #071330;">
          <children>
             <Button layoutX="644.0" layoutY="2.0" mnemonicParsing="false" onAction="#modifyUser" text="Modifier" />
-            <Button layoutX="857.0" layoutY="3.0" mnemonicParsing="false" text="afficher les catégories" />
+            <Button layoutX="857.0" layoutY="3.0" mnemonicParsing="false" onAction="#viewCategory" text="afficher les catégories" />
             <Button layoutX="714.0" layoutY="3.0" mnemonicParsing="false" onAction="#viewAddCategoryPage" text="ajouter une catégorie" />
          </children></Pane>
       <VBox layoutX="652.0" layoutY="44.0" prefHeight="196.0" prefWidth="267.0">

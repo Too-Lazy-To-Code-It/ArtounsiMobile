@@ -124,9 +124,7 @@ public class Profile implements Initializable {
            //post.setId_post(post.getId_post());
            String title = post.getTitle();
            int CreaterUserId =postService.getIdUserByTitle(title);
-           
-           System.out.println("aaaaaaaaaaaaaaaaaaa"+CreaterUserId);
-            System.out.println("bbbbbbbbbbbbbbbbbb"+Logged.get_instance().getUser().getID_User());
+
            if(CreaterUserId==Logged.get_instance().getUser().getID_User()){
            try {
                FXMLLoader fxmlLoader = new FXMLLoader();

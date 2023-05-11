@@ -930,8 +930,8 @@ return [[
 '[C]App%5CEntity%5CCategory' => 1,
 'App%5CEntity%5CCategory%23__construct' => 0,
 '[C]App%5CEntity%5CCategory%23__construct' => 1,
-'App%5CEntity%5CCategory%23getIdCategory' => 0,
-'[C]App%5CEntity%5CCategory%23getIdCategory' => 1,
+'App%5CEntity%5CCategory%23getId_Category' => 0,
+'[C]App%5CEntity%5CCategory%23getId_Category' => 1,
 'App%5CEntity%5CCategory%23getNameCategory' => 0,
 '[C]App%5CEntity%5CCategory%23getNameCategory' => 1,
 'App%5CEntity%5CCategory%23setNameCategory' => 0,
@@ -2580,7 +2580,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1683801340,
+1 => 1683831453,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
