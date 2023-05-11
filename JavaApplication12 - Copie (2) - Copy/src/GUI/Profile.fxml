@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1380.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
    <children>
       <ImageView fx:id="Background" fitHeight="248.0" fitWidth="1386.0" pickOnBounds="true" preserveRatio="true" />
-      <Pane layoutY="248.0" prefHeight="29.0" prefWidth="1386.0" style="-fx-background-color: #071330;">
+      <Pane layoutY="248.0" prefHeight="29.0" prefWidth="1250.0" style="-fx-background-color: #071330;">
          <children>
             <Button layoutX="656.0" layoutY="2.0" mnemonicParsing="false" onAction="#modifyUser" text="Modifier" />
          </children></Pane>
@@ -29,7 +29,7 @@
             <Label fx:id="Description" text="DESCRIPTION" textFill="WHITE" />
          </children>
       </VBox>
-      <ScrollPane fitToWidth="true" layoutX="26.0" layoutY="276.0" minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefViewportHeight="500.0" prefWidth="1344.0" snapToPixel="false" styleClass="backcolor" stylesheets="@../../../../Documents/NetBeansProjects/JavaApplication1/src/css/menustyle.css" vbarPolicy="ALWAYS">
+      <ScrollPane fitToWidth="true" layoutX="2.0" layoutY="276.0" minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefViewportHeight="500.0" prefWidth="1250.0" snapToPixel="false" styleClass="backcolor" stylesheets="@../../../../Documents/NetBeansProjects/JavaApplication1/src/css/menustyle.css" vbarPolicy="ALWAYS">
                <content>
                   <VBox fx:id="tfpostlist" minWidth="0.0" prefHeight="34.0" prefWidth="200.0" styleClass="backcolor" stylesheets="@../../../../Documents/NetBeansProjects/JavaApplication1/src/css/menustyle.css" />
                </content>

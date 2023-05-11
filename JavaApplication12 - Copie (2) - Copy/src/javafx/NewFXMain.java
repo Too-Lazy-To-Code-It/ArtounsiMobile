@@ -42,7 +42,7 @@ public class NewFXMain extends Application {
               
             root = FXMLLoader.load(getClass().getResource("/GUImenuprincipale/menuprincipale.fxml"));
 
-            Scene scene = new Scene(root,1380,700);
+            Scene scene = new Scene(root);
             primaryStage.setTitle("ArTounsi");
             primaryStage.setScene(scene);
             primaryStage.show();

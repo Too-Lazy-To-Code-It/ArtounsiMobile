@@ -256,7 +256,7 @@ public class Register {
         as.CreateAU(u);
         //as.AddAu(u);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Gui/Login.fxml"));
         Parent uuView = loader.load();
         Scene scene1 = new Scene(uuView, 1380, 700);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
