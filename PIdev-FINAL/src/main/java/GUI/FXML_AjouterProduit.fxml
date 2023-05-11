@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="backcolor" stylesheets="@../Css/style2.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXML_AjouterProduitController">
+   <children>
+      <TextField fx:id="nom" layoutX="185.0" layoutY="54.0" />
+      <TextField fx:id="descp" layoutX="185.0" layoutY="102.0" />
+      <TextField fx:id="prix" layoutX="186.0" layoutY="259.0" />
+      <ChoiceBox fx:id="listeCateg" layoutX="185.0" layoutY="150.0" prefWidth="150.0" stylesheets="@../Css/coboboxadd.css" />
+      <Label layoutX="32.0" layoutY="42.0" prefHeight="49.0" prefWidth="118.0" text="Nom:" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="90.0" prefHeight="49.0" prefWidth="118.0" text="Description" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="188.0" prefHeight="49.0" prefWidth="118.0" text="Image" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="247.0" prefHeight="49.0" prefWidth="118.0" text="Prix" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="138.0" prefHeight="49.0" prefWidth="118.0" text="Catégorie" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajouter" layoutX="226.0" layoutY="333.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="49.0" prefWidth="149.0" styleClass="buttoncolor" stylesheets="@../Css/style2.css" text="Ajouter" textFill="WHITE" />
+      <Button fx:id="retour" layoutX="457.0" layoutY="22.0" mnemonicParsing="false" onAction="#GotoAccueil" prefHeight="30.0" prefWidth="91.0" styleClass="buttoncolor" stylesheets="@../Css/style2.css" text="Retour" textFill="WHITE" />
+      <Button fx:id="imp" layoutX="191.0" layoutY="200.0" mnemonicParsing="false" onAction="#importer" prefHeight="25.0" prefWidth="138.0" text="Importer" />
+   </children>
+</AnchorPane>

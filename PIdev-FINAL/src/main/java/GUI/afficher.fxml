@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1357.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherController">
+   <top>
+      <ScrollPane prefHeight="600.0" prefWidth="1357.0" style="-fx-background-color: ;" styleClass="backcolor" stylesheets="@../css/menustyle.css" BorderPane.alignment="CENTER">
+         <content>
+            <GridPane fx:id="citiesGril" prefHeight="50.0" prefWidth="1355.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </top>
+</BorderPane>

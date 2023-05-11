@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #00002C;" stylesheets="@../../../Style/Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FPWEmail">
+   <children>
+      <AnchorPane layoutX="654.0" layoutY="34.0" prefHeight="620.0" prefWidth="696.0" style="-fx-background-color: #13123A;">
+         <children>
+            <TextField fx:id="Email" layoutX="58.0" layoutY="248.0" prefHeight="42.0" prefWidth="575.0" promptText="EMAIL" />
+            <Label layoutX="286.0" layoutY="34.0" text="Recuperation de mot de passe" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="263.0" layoutY="347.0" onAction="#VerifyFPWE" prefHeight="68.0" prefWidth="184.0" text="Suivant" />
+            <Label layoutX="95.0" layoutY="547.0" text="Nouvel utilisateur ?">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="286.0" layoutY="535.0" onAction="#SignUp" prefHeight="53.0" prefWidth="154.0" text="S'inscrire" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="277.0" fitWidth="506.0" layoutX="75.0" layoutY="265.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/ARTounsi.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="75.0" layoutY="81.0" prefHeight="132.0" prefWidth="510.0" styleClass="welcome-label" text="Bienvenue à" textFill="WHITE">
+         <font>
+            <Font size="75.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1380.0" stylesheets="@../../../Style/Swag.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateBan">
+   <children>
+      <Label layoutX="832.0" layoutY="295.0" text="ID_User">
+         <font>
+            <Font name="Georgia" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IDUSERTF" layoutX="1002.0" layoutY="295.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="835.0" layoutY="370.0" text="Reason">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ReasonTF" layoutX="1002.0" layoutY="370.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button layoutX="1042.0" layoutY="462.0" mnemonicParsing="false" onAction="#UpdateBan" text="Update">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Pane layoutY="-1.0" prefHeight="700.0" prefWidth="719.0" style="-fx-background-color: #2196f3;">
+         <children>
+            <ImageView fitHeight="286.0" fitWidth="408.0" layoutX="127.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/ARTounsi.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

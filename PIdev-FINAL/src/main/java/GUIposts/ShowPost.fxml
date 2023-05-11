@@ -1,0 +1,19 @@
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.ShowPostController">
+    <children>
+        <AnchorPane layoutY="178.0" prefHeight="75.0" prefWidth="1280.0">
+            <children>
+            </children>
+        </AnchorPane>
+        <ScrollPane fitToWidth="true" layoutX="235.0" layoutY="273.0" minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefViewportHeight="500.0" prefWidth="874.0" snapToPixel="false" vbarPolicy="ALWAYS" AnchorPane.leftAnchor="235.0">
+            <content>
+                <VBox fx:id="tfpostlist" />
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,26 @@
+/* Make the background black */
+#AnchorPane {
+    -fx-background-color: #1C233D;
+}
+
+/* Style the label */
+#AnchorPane > Label {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+}
+
+/* Style the buttons */
+#AnchorPane > VBox > Button {
+    -fx-background-color: transparent; /* make the button transparent */
+    -fx-text-fill: white;
+    -fx-padding: 10px; /* add some padding */
+    -fx-border-width: 0px 0px 0px 5px; /* add a border to the left side */
+    -fx-border-color: transparent;
+}
+
+/* Style the buttons when hovered */
+#AnchorPane > VBox > Button:hover {
+    -fx-background-color: #black;/* change the background to white */
+    -fx-text-fill: #C10C99;
+    -fx-border-color: #C10C99;
+}

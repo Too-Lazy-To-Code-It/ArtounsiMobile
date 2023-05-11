@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="297.0" prefWidth="329.0" style="-fx-background-color: #1C233D;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TutorielItemController">
+   <children>
+      <AnchorPane id="AnchorPane" onMouseClicked="#showTutorial" prefHeight="282.0" prefWidth="302.0" style="-fx-background-color: #071330; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@../css/menustyle.css">
+         <children>
+            <Label fx:id="tutorial_title" alignment="CENTER" layoutX="8.0" layoutY="204.0" prefHeight="39.0" prefWidth="304.0" text="Title" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="tutorial_creator" layoutX="25.0" layoutY="243.0" prefHeight="31.0" prefWidth="160.0" text="creator" textFill="WHITE" />
+            <AnchorPane prefHeight="212.0" prefWidth="320.0" style="-fx-border-radius: 25;">
+               <children>
+                  <ImageView fx:id="tutorial_image" fitHeight="212.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="categorie_label" alignment="CENTER" layoutX="8.0" layoutY="224.0" prefHeight="39.0" prefWidth="304.0" text="Title" textFill="#9a5d95">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

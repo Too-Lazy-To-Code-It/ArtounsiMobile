@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="700.0" prefWidth="1380.0" stylesheets="@../../../Style/Swag.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Register">
+   <children>
+      <Label layoutX="596.0" layoutY="26.0" text="Prenom">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NameTF" layoutX="741.0" layoutY="26.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="990.0" layoutY="32.0" text="Nom">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="LastNameTF" layoutX="1107.0" layoutY="26.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="610.0" layoutY="370.0" text="Surnom">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NicknameTF" layoutX="750.0" layoutY="370.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="970.0" layoutY="270.0" text="Type">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="609.0" layoutY="266.0" text="Pays">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="604.0" layoutY="197.0" text="Mot de Passe">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="978.0" layoutY="113.0" text="Date de Naissance">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="619.0" layoutY="107.0" text="Email">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EmailTF" layoutX="735.0" layoutY="107.0" prefHeight="25.0" prefWidth="729.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="PasswordTF" layoutX="734.0" layoutY="191.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="964.0" layoutY="198.0" text="Confirmer Mdp">
+         <font>
+            <Font name="Georgia" size="27.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="CPasswordTF" layoutX="1106.0" layoutY="191.0" prefHeight="25.0" prefWidth="623.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </PasswordField>
+      <DatePicker fx:id="BirthdayTF" layoutX="1107.0" layoutY="106.0" prefHeight="44.0" prefWidth="208.0" />
+      <Button layoutX="917.0" layoutY="861.0" mnemonicParsing="false" onAction="#Register" text="Registrer">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Pane layoutX="-1.0" prefHeight="923.0" prefWidth="540.0" style="-fx-background-color: #2196f3;" stylesheets="@../../../Style/Swag.css">
+         <children>
+            <ImageView fitHeight="305.0" fitWidth="540.0" layoutX="14.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/ARTounsi.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="610.0" layoutY="675.0" text="Background " />
+      <Button layoutX="788.0" layoutY="663.0" mnemonicParsing="false" onAction="#Uploadbg" text="Upload" />
+      <Label layoutX="619.0" layoutY="766.0" text="Avatar" />
+      <Button layoutX="790.0" layoutY="764.0" mnemonicParsing="false" onAction="#UploadAv" text="Upload" />
+      <TextField fx:id="BioTF" layoutX="1107.0" layoutY="373.0" />
+      <Label layoutX="992.0" layoutY="376.0" text="BIo" />
+      <Label layoutX="627.0" layoutY="540.0" text="Description" />
+      <TextArea fx:id="DescriptionTF" layoutX="808.0" layoutY="476.0" prefHeight="162.0" prefWidth="469.0" />
+      <ComboBox fx:id="NationalityTF" layoutX="750.0" layoutY="265.0" prefWidth="150.0">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Artist" />
+            <String fx:value="Studio" />
+            <String fx:value="Observer" />
+         </FXCollections>
+      </items>
+      </ComboBox>
+      <ComboBox fx:id="TypeTF" layoutX="1106.0" layoutY="272.0" prefWidth="150.0" />
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

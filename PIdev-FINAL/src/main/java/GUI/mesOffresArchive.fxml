@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1380.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MesOffresArchiveController">
+   <children>
+      <ImageView fitHeight="274.0" fitWidth="1380.0" layoutY="-28.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/black.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="6.0" layoutY="14.0" prefHeight="611.0" prefWidth="1361.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+         <content>
+            <GridPane fx:id="citiesGril" prefHeight="66.0" prefWidth="1362.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

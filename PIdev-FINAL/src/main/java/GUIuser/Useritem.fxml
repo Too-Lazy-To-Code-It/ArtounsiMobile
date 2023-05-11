@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<Pane prefHeight="264.0" prefWidth="416.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIuser.Useritem">
+   <children>
+      <ImageView fx:id="Background" fitHeight="88.0" fitWidth="416.0" layoutX="1.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox layoutX="33.0" layoutY="12.0" prefHeight="216.0" prefWidth="359.0" stylesheets="@../css/menustyle.css">
+         <children>
+            <ImageView fx:id="Avatar" fitHeight="88.0" fitWidth="208.0">
+               <clip>
+                  <Circle centerX="50" centerY="50" radius="50" />
+               </clip>
+               <VBox.margin>
+                  <Insets left="160.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="Nickname" text="Nickname" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="150.0" top="20.0" />
+               </VBox.margin></Label>
+            <Label fx:id="Bio" text="Bio" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="150.0" top="20.0" />
+               </VBox.margin></Label>
+            <Label fx:id="Location" text="Location" textAlignment="CENTER" textFill="#fff2f2">
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin></Label>
+            <Label fx:id="Description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="165.0" text="DESCRIPTION" textAlignment="CENTER" textFill="#fffafa">
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin></Label>
+            <Button fx:id="banid" mnemonicParsing="false" onAction="#Addban" text="Ban">
+               <VBox.margin>
+                  <Insets left="150.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</Pane>

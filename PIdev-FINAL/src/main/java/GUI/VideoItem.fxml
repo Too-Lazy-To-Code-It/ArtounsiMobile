@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="192.0" prefWidth="327.0" style="-fx-background-color: #1C233D;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.VideoItemController">
+   <children>
+      <AnchorPane id="AnchorPane" onMouseClicked="#showVideo" prefHeight="180.0" prefWidth="317.0" style="-fx-background-color: #071330; -fx-background-radius: 20;" styleClass="shadow" stylesheets="@../css/menustyle.css">
+         <children>
+            <ImageView fx:id="video_image" fitHeight="161.0" fitWidth="135.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
+               <image>
+                  <Image url="@../../../../../Pictures/ISIM_LOGO_ar.png" />
+               </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="34.19" radius="16.2275" width="32.72" />
+               </effect>
+            </ImageView>
+            <Label fx:id="video_title" layoutX="163.0" layoutY="19.0" prefHeight="27.0" prefWidth="127.0" text="Title" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="video_desc" alignment="TOP_LEFT" layoutX="163.0" layoutY="59.0" prefHeight="78.0" prefWidth="147.0" text="description" textFill="WHITE" wrapText="true" />
+            <Label fx:id="video_date" alignment="TOP_LEFT" layoutX="163.0" layoutY="144.0" prefHeight="27.0" prefWidth="147.0" text="15-22-2023" textFill="WHITE" />
+            <HBox fx:id="vbox" layoutX="249.0" layoutY="131.0">
+               <children>
+                  <ImageView fx:id="modifyVideo" fitHeight="27.0" fitWidth="30.0" onMouseClicked="#modifyVideo" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/edit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deletevideo" fitHeight="27.0" fitWidth="30.0" onMouseClicked="#deleteVideo" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/delete.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label fx:id="video_date1" alignment="TOP_LEFT" layoutX="195.0" layoutY="158.0" text="views" textFill="WHITE" />
+            <Label fx:id="numViews" alignment="TOP_LEFT" layoutX="163.0" layoutY="158.0" text="1000" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" fx:id="CRUD" prefHeight="1000.0" prefWidth="1500.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIARTISTE.crudartistecontroller">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="CRUD1" layoutX="10.0" layoutY="10.0" prefHeight="1000.0" prefWidth="1500.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+         <children>
+            <ImageView fitHeight="1000.0" fitWidth="1517.0" layoutX="5.0" layoutY="-29.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/black.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="10.0" layoutY="40.0" prefHeight="698.0" prefWidth="1507.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+               <children>
+                  <AnchorPane fx:id="afficheroffre" prefHeight="714.0" prefWidth="1481.0" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

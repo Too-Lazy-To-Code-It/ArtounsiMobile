@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1366.0" styleClass="backcolor" stylesheets="@../css/menucss.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUImenuprincipale.menuprincipale">
+   <top>
+      <HBox prefHeight="42.0" prefWidth="900.0" styleClass="border-bottom" stylesheets="@../../../../../Desktop/Nouveau%20dossier/JavaApplication12/src/css/menustyle.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#gotomenu" prefHeight="40.0" prefWidth="119.0" styleClass="transparent" stylesheets="@../css/menustyle.css">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-menu-rounded-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="galeriebutton" mnemonicParsing="false" onAction="#galerie" prefHeight="40.0" prefWidth="99.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Galerie" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/330890883_1318877111992571_2484420062550985605_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="forstudio" mnemonicParsing="false" onAction="#forstudio" prefHeight="40.0" prefWidth="86.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Emplois" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/333883745_892039358538903_1962846111027787901_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="challengebutton" mnemonicParsing="false" onAction="#challenge" prefHeight="40.0" prefWidth="125.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Challenge" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/333365433_1649145842223412_3337269275931627640_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="tutobutn" mnemonicParsing="false" onAction="#tuto" prefHeight="40.0" prefWidth="124.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Tutoriel" textFill="#fffbfb">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/333986975_1158926501444541_1981321693617498645_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="shopbutton" mnemonicParsing="false" prefHeight="40.0" prefWidth="97.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Shop" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/331050698_224953666657115_3221001785189149812_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="panierbutton" mnemonicParsing="false" prefHeight="40.0" prefWidth="103.0" styleClass="transparent" text="Panier" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/333310801_1954457894918104_4332476977521723115_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="blogbutton" mnemonicParsing="false" onAction="#blog" prefHeight="40.0" prefWidth="99.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Blog" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/330890883_1318877111992571_2484420062550985605_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deconnexion" mnemonicParsing="false" onAction="#deconnexion" prefHeight="40.0" prefWidth="122.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Deconnexion" textAlignment="RIGHT" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="80.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="profile" mnemonicParsing="false" onAction="#afficherprofile" prefHeight="40.0" prefWidth="114.0" styleClass="transparent" stylesheets="@../css/menustyle.css" text="Profile" textFill="WHITE">
+               <graphic>
+                  <Circle fx:id="profilephoto" fill="DODGERBLUE" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="transparent" stylesheets="@../css/menustyle.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="78.0" prefHeight="78.0" prefWidth="900.0">
+               <children>
+                  <VBox prefHeight="126.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <Pane prefHeight="95.0" prefWidth="536.0">
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Pane>
+                  <VBox prefHeight="50.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <Pane fx:id="CRUD" styleClass="bottom" stylesheets="@../../../../../Desktop/Nouveau%20dossier/JavaApplication12/src/css/menustyle.css" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

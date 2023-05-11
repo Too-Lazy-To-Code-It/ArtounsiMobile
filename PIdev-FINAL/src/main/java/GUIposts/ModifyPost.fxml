@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="1225.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.ModifyPostController">
+   <children>
+     
+      <Label alignment="CENTER" layoutX="839.0" layoutY="98.0" prefHeight="54.0" prefWidth="451.0" text="Modify Post" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="907.0" layoutY="208.0" prefHeight="35.0" prefWidth="142.0" text="Post Title :" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="902.0" layoutY="271.0" text="New Post Title :" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="902.0" layoutY="337.0" text="New Description :" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="PostTitle" layoutX="1112.0" layoutY="213.0" />
+      <TextField fx:id="NewPostTitle" layoutX="1111.0" layoutY="276.0" />
+      <TextField fx:id="NewDescription" layoutX="1112.0" layoutY="350.0" />
+      <Button layoutX="1111.0" layoutY="414.0" mnemonicParsing="false" onAction="#UpdatePost" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #C10C99;" text="Modify Post" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="710.0" fitWidth="712.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/erakbackground.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="896.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: C10C99;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

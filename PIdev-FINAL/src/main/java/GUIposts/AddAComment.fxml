@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.AddACommentController">
+    <VBox layoutX="712.0" layoutY="112.0" prefHeight="464.0" prefWidth="654.0" spacing="10">
+        <Label alignment="CENTER" prefHeight="35.0" prefWidth="654.0" stylesheets="@../Css/Label_TextField.css" text="Add a Comment:" textFill="WHITE" />
+        <TextField fx:id="commentTextField" prefHeight="124.0" prefWidth="654.0" promptText="Write your comment here" stylesheets="@../Css/Label_TextField.css" />
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#addComment" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: C10C99;" text="submit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+        
+    </VBox>
+   <ImageView fitHeight="725.0" fitWidth="725.0" layoutX="-26.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../Image/erakbackground.jpg" />
+      </image>
+   </ImageView>
+</AnchorPane>

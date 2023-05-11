@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1500.0" styleClass="dark-background" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUImenuprincipale.MenuelementsController">
+   <children>
+      <ImageView fitHeight="1000.0" fitWidth="1500.0" layoutX="7.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/picc.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="636.0" layoutY="274.0" prefHeight="143.0" prefWidth="402.0" text="arTounsi" textFill="WHITE">
+         <font>
+            <Font name="Andalus" size="96.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

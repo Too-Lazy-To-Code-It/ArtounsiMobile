@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIposts.DeletePostController">
+    <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #000842;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+      <children>
+         <SplitMenuButton fx:id="postMenuButton" layoutX="971.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="320.0" stylesheets="@../Css/deletemenu.css" text="All post's ">
+           <items>
+
+           </items>
+         </SplitMenuButton>
+         <Button layoutX="972.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleDeletePostButtonAction" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: C10C99;" text="Delete Post" textFill="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+         <ImageView fitHeight="700.0" fitWidth="534.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fitHeight="710.0" fitWidth="716.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../Image/erakbackground.jpg" />
+            </image>
+         </ImageView>
+         <Button layoutX="972.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="320.0" style="-fx-background-color: C10C99;" text="Return" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Button>
+      </children>
+    </AnchorPane>
+</StackPane>

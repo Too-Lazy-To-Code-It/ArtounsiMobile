@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="CRUD" prefHeight="1000.0" prefWidth="1500.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIgrotmot.crudmotcontroller">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="CRUD1" layoutX="10.0" layoutY="10.0" prefHeight="1000.0" prefWidth="1500.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+         <children>
+            <ImageView fitHeight="1000.0" fitWidth="1517.0" layoutX="5.0" layoutY="-29.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/black.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="596.0" prefWidth="1507.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+               <children>
+                  <AnchorPane fx:id="afficheroffre" prefHeight="596.0" prefWidth="1481.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="174.0" layoutY="21.0" prefHeight="35.0" prefWidth="866.0" stylesheets="@../css/PostControlPanel.css">
+               <children>
+                  <Button fx:id="ajouter1" mnemonicParsing="false" onAction="#ajout" prefHeight="46.0" prefWidth="238.0" style="-fx-background-radius: 10;" styleClass="transparent" text="Ajouter un mot" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

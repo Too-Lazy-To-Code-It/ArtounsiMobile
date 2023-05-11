@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="719.0" prefWidth="1581.0" styleClass="bluecolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXML_Modify_ChallengeController">
+   <children>
+      <SplitPane dividerPositions="0.4874517374517375" layoutX="157.0" layoutY="63.0" prefHeight="516.0" prefWidth="1038.0" style="-fx-background-radius: 40; -fx-background-color: #071330;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="481.0" style="-fx-background-color: #071330; -fx-background-radius: 20;" stylesheets="@../css/menustyle.css">
+      <children>
+      <Label layoutX="79.0" layoutY="101.0" text="Title" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="titre" layoutX="268.0" layoutY="106.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="date_challenge" layoutX="268.0" layoutY="293.0" />
+      <Label layoutX="79.0" layoutY="288.0" text="Date de Challenge" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="143.0" text="Description" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descrption" layoutX="268.0" layoutY="146.0" prefHeight="90.0" prefWidth="174.0" />
+      <Label fx:id="image_name" layoutX="268.0" layoutY="338.0" text="No Image Selected" textFill="#eeeeee">
+         <font>
+            <Font name="Bodoni MT" size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="355.0" layoutY="333.0" mnemonicParsing="false" onAction="#importImage" text="Import Image" />
+      <Label layoutX="79.0" layoutY="330.0" text="Image" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="niveau" layoutX="268.0" layoutY="251.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="79.0" layoutY="248.0" text="Niveau" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="371.0" text="Categorie" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="categories" layoutX="268.0" layoutY="374.0" prefHeight="25.0" prefWidth="174.0" promptText="choose categorie" />
+      <Button layoutX="268.0" layoutY="418.0" mnemonicParsing="false" onAction="#modifyChallenge" prefHeight="25.0" prefWidth="174.0" text="Modify Challenge" />
+                  <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="36.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/next.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="86.0" layoutY="23.0" text="Modify Callenge" textFill="#c967b3">
+                     <font>
+                        <Font name="System Bold" size="37.0" />
+                     </font>
+                  </Label>
+   </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="560.0">
+               <children>
+                  <ImageView fitHeight="592.0" fitWidth="589.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/capture2.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

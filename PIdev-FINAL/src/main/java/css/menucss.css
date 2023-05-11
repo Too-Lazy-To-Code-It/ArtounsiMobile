@@ -1,0 +1,59 @@
+
+.backcolor {
+    -fx-background-color:  #1C233D;
+}
+
+.border-bottom {
+    -fx-border-color:   #9e1b54;
+    -fx-border-width: 0 0 3 0;
+}
+
+.transparent {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: #9e1b54;
+    -fx-text-fill: #fff;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:pressed {
+    -fx-background-color:  #9e1b54;
+    -fx-text-fill: #fff;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.button:default {
+    -fx-background-color:  #9e1b54;
+    -fx-text-fill: #fff;
+}
+
+.text-field {
+    -fx-background-color:#1C233D;
+    -fx-border-color: #9e1b54;
+    -fx-text-fill: #fff;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 10px;
+    -fx-prompt-text-fill: #aaa;
+    -fx-background-radius: 5px;
+}
+
+.text-field:hover {
+    -fx-border-color: white;
+}
+
+.text-field:disabled {
+    -fx-opacity: 0.5;
+}
+
+.text-field:focused {
+    -fx-background-color: #1C233D;
+    -fx-border-color: #9e1b54;
+}
+
+

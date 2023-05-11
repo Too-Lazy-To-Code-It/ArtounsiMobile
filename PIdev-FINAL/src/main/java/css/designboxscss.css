@@ -1,0 +1,59 @@
+.root {
+    -fx-background-color: #1c3144;
+}
+
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+    -fx-border-color: #ffffff;
+}
+
+.button:hover {
+    -fx-background-color: #1c3144;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ffffff;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+}
+
+.text-area {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+}
+
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+}
+
+.menu-bar {
+    -fx-background-color: #1c3144;
+    -fx-text-fill: #ffffff;
+}
+
+.menu {
+    -fx-background-color: #1c3144;
+    -fx-text-fill: #ffffff;
+}
+
+.menu-item {
+    -fx-background-color: #1c3144;
+    -fx-text-fill: #ffffff;
+}
+
+.tree-view {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+}
+
+.tree-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1c3144;
+}

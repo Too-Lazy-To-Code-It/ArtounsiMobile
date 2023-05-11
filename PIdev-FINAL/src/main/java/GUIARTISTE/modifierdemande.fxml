@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1500.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIARTISTE.modifierdemandeController">
+   <children>
+      <SplitPane dividerPositions="0.5415057915057915" layoutX="237.0" layoutY="79.0" prefHeight="516.0" prefWidth="1038.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="408.0">
+               <children>
+                  <ImageView fitHeight="592.0" fitWidth="589.0" layoutX="-14.0" layoutY="-30.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/erak-note-hairpin-artstation.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="582.0" style="-fx-background-color: #071330;" stylesheets="@../css/menustyle.css">
+               <children>
+                  <TextField fx:id="titreOffre" layoutX="250.0" layoutY="118.0" prefHeight="25.0" prefWidth="204.0" />
+                  <Label layoutX="66.0" layoutY="113.0" text="Titre demande :" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="6.0" layoutY="176.0" text="Description  demande :" textFill="#f7f5f5">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="listeCategorie" layoutX="253.0" layoutY="297.0" prefHeight="25.0" prefWidth="198.0" />
+                  <Label layoutX="118.0" layoutY="279.0" text="Categorie:" textFill="#f7f5f5">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="modifier" layoutX="248.0" layoutY="381.0" mnemonicParsing="false" onAction="#modifierOffre" prefHeight="30.0" prefWidth="175.0" styleClass="buttoncolor" stylesheets="@../css/menustyle.css" text="modifier" textFill="#fff7f7" />
+                  <TextArea fx:id="descriptionOffre" layoutX="252.0" layoutY="176.0" prefHeight="81.0" prefWidth="200.0" />
+                  <Button fx:id="pdfs" layoutX="128.0" layoutY="232.0" mnemonicParsing="false" onAction="#modifiercv" style="-fx-border-color: #071330;" text="moncv" textFill="#8026d3">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="shadowcv" />
+                     </styleClass></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

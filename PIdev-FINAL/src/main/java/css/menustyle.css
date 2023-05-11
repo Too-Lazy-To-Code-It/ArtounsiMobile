@@ -1,0 +1,65 @@
+
+.dark-background{
+    -fx-background-color:#1c3144;
+
+}
+.border-bottom{
+    -fx-border-width: 0 0 2 0 ;
+    -fx-border-color: #9e1b54 ;
+}
+
+.colorsearch{-fx-background-color:#333333}
+.backcolor{-fx-background-color: #1C233D}
+
+
+
+.buttoncolor{-fx-background-color: linear-gradient(from 25px 25px to 100px 70px, #c10c99,  #071330) ;
+                  -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
+    -fx-transition: all 0.3s;
+     
+}
+.bluecolor{-fx-background-color:#1C233D}
+.bluecolorcadre{-fx-background-color:#29335A;}
+
+.transparent{ -fx-background-color: transparent;
+    -fx-border-color: transparent;}
+.boxcolor {-fx-background-color:#1C1919;}
+
+           
+                       
+.shadow{
+-fx-effect: dropshadow(three-pass-box, rgba(158, 27, 84, 1),10, 0, 0, 0);
+-fx-background-color: linear-gradient(to bottom, #9e1b54, #670d29);
+
+}
+.shadowcv{
+    -fx-effect: dropShadow(three-pass-box,rgba(193, 12, 153, 1), 1.0 , 4.0 , 4.0 ,5.0);
+   
+}
+.button:hover {
+    -fx-background-color:  #9e1b54;
+    -fx-text-fill: #fff;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:pressed {
+    -fx-background-color:  #9e1b54;
+    -fx-text-fill: #fff;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.button:default {
+    -fx-background-color:  #9e1b54;
+    -fx-text-fill: #fff;
+}
+.border-bottom {
+    -fx-border-color:  #9e1b54;
+    -fx-border-width: 0 0 3 0;
+}
+
+
+

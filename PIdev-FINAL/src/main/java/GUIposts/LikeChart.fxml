@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUIposts.LikeChartController">
+    <BarChart fx:id="chart" layoutX="50.0" layoutY="50.0" prefHeight="522.0" prefWidth="1168.0">
+        <xAxis>
+            <CategoryAxis label="Post ID" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" label="Number of Likes" />
+        </yAxis>
+    </BarChart>
+</AnchorPane>
