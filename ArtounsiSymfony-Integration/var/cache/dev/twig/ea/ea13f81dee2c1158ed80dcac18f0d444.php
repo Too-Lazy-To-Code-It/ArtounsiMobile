@@ -165,6 +165,6 @@ class __TwigTemplate_36ce4557c64d8506dfd13d5449d17b5f extends Template
     <button class=\"btn btn-primary\" id=\"save-btn\">{{ button_label|default('Save') }}</button>
 
 {{ form_end(form) }}
-", "post/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post\\_form.html.twig");
+", "post/_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\post\\_form.html.twig");
     }
 }

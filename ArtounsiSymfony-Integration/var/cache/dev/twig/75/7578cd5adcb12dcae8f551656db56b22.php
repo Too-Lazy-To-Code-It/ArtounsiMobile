@@ -133,6 +133,6 @@ class __TwigTemplate_c7888616fa03ae1d6f1f1c6c70092502 extends Template
 
     <a href=\"{{ path('app_grosmots_index') }}\">back to list</a>
 {% endblock %}
-", "grosmots/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\grosmots\\new.html.twig");
+", "grosmots/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\grosmots\\new.html.twig");
     }
 }

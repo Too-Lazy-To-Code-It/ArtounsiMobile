@@ -10,6 +10,7 @@ import models.Tutoriel;
 import models.Video;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,7 +51,7 @@ public class TutorielItemController implements Initializable {
     }    
 
     @FXML
-    private void showTutorial(MouseEvent event) throws IOException {
+    private void showTutorial(MouseEvent event) throws IOException, ParseException {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_Fetch_Tutoriel.fxml"));
         Parent view_2=loader.load();
         FXML_Fetch_TutorielController Fetch_TutorielController=loader.getController();

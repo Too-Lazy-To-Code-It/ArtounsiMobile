@@ -133,6 +133,6 @@ class __TwigTemplate_aed9ee7ad131f001206a2c5cb5c4c294 extends Template
 
     <a href=\"{{ path('app_participation_index') }}\">back to list</a>
 {% endblock %}
-", "participation/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\participation\\new.html.twig");
+", "participation/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\participation\\new.html.twig");
     }
 }

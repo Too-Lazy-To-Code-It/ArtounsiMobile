@@ -175,7 +175,7 @@ public class VueCommentPostController implements Initializable {
     
       @FXML
      public void handleReturn(ActionEvent event) throws IOException {
-     Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/PostControlPanel.fxml"));
+     Parent root = FXMLLoader.load(getClass().getResource("/GUImenuprincipale/menuprincipale.fxml"));
      Scene scene = new Scene(root);
      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
      stage.setScene(scene);

@@ -236,6 +236,6 @@ class __TwigTemplate_cbcb03f8ff497dbeeb1eaaa9e58661e3 extends Template
 
     {{ include('offretravail/_delete_form.html.twig') }}
 {% endblock %}
-", "offretravail/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravail\\show.html.twig");
+", "offretravail/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravail\\show.html.twig");
     }
 }

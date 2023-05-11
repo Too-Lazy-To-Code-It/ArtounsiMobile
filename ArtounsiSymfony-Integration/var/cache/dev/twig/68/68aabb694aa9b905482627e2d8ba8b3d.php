@@ -1249,6 +1249,6 @@ class __TwigTemplate_422efb5d5dfe150a677b4a5b85297dba extends Template
 
 </body>
 
-</html>", "grosmots/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\grosmots\\index.html.twig");
+</html>", "grosmots/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\grosmots\\index.html.twig");
     }
 }

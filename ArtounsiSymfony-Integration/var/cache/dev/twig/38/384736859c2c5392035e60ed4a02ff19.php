@@ -97,6 +97,6 @@ class __TwigTemplate_fe3a654112a1a090b8d915c67441d07f extends Template
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
     }
 }

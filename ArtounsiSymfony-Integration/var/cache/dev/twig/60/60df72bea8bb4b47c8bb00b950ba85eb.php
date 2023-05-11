@@ -83,6 +83,6 @@ class __TwigTemplate_baff2b5a033efae6597954429a612181 extends Template
     public function getSourceContext()
     {
         return new Source("<a{% for attr, value in options %} {{ attr }}=\"{{ value }}\"{% endfor %}>{{ title }}</a>
-", "@KnpPaginator/Pagination/sortable_link.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sortable_link.html.twig");
+", "@KnpPaginator/Pagination/sortable_link.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sortable_link.html.twig");
     }
 }

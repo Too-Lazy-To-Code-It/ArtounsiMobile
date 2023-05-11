@@ -201,6 +201,6 @@ class __TwigTemplate_b56b4ff720992c398ad913d576ff6693 extends Template
         </div>
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
+", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
     }
 }

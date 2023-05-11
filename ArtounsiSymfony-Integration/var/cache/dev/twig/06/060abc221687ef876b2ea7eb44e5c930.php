@@ -794,6 +794,6 @@ mpphtdocsimg" . twig_get_attribute($this->env, $this->source, $context["produit"
 
 
 
-", "produits/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits\\index.html.twig");
+", "produits/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits\\index.html.twig");
     }
 }

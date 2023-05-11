@@ -73,12 +73,12 @@
       </VBox>
       <HBox fx:id="addButton" alignment="CENTER" layoutX="917.0" layoutY="141.0" onMouseClicked="#addVideo" prefHeight="34.0" prefWidth="131.0" spacing="3.0" style="-fx-cursor: hand;" stylesheets="@../css/style.css">
          <children>
-            <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="icon" fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/add.png" />
                </image>
             </ImageView>
-            <Label prefHeight="34.0" prefWidth="170.0" text="Add Video" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="text" prefHeight="34.0" prefWidth="170.0" text="Add Video" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

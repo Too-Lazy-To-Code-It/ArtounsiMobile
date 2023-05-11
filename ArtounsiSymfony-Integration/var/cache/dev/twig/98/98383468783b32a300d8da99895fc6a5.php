@@ -79,6 +79,6 @@ class __TwigTemplate_4143f6bea9b00355c6b2f0d7f55d754c extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~offretravail.idDemande) }}\">
     <button class=\"text-danger\"><i class=\"bi bi-trash\"></i> Supprimer</button>
 </form>
-", "demandetravail/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\demandetravail\\_delete_form.html.twig");
+", "demandetravail/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\demandetravail\\_delete_form.html.twig");
     }
 }

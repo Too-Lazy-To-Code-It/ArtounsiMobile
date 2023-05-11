@@ -123,6 +123,6 @@ class __TwigTemplate_6f5b9b8ccc12c64b267bfc40df1f6ee7 extends Template
     </span>
     {{ title }}
 </a>
-", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_sortable_link.html.twig");
     }
 }

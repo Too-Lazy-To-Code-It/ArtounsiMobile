@@ -205,6 +205,6 @@ class __TwigTemplate_a515c149189099536c34410fad876b97 extends Template
 
     <a href=\"{{ path('app_rating_new') }}\">Create new</a>
 {% endblock %}
-", "rating/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\rating\\index.html.twig");
+", "rating/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\rating\\index.html.twig");
     }
 }

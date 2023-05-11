@@ -16,6 +16,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import models.Panier;
+import models.Produits;
 import util.MaConnexion;
 
 /**
@@ -58,7 +60,7 @@ public class LignePanierService implements LignePanierInterface{
     
  //******************************* supprimer ligne panier  ***********************************************//      
    @Override
-    public void supprimerLignePanier(int idlignepanier  ){
+    public void supprimerLignePanier(int idlignepanier){
       try {
             String req = "DELETE FROM lignepanier WHERE idlignepanier = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
@@ -70,9 +72,22 @@ public class LignePanierService implements LignePanierInterface{
         }
     }
     
-    
+  /*
+    public void supprimerLignePanier (int idpanier, int idprdouit) {
+        try {
+            
+            String req = "DELETE lp FROM lignepanier lp JOIN panier p ON lp.idpanier = p.idpanier WHERE p.idpanier= ? AND lp.idproduit = ?";
+            PreparedStatement ps  = cnx.prepareStatement(req);
+            ps.setInt(1, idpanier);
+            ps.setInt(2, idprdouit);
+            ps.executeUpdate();
+            System.out.println("produit d'ID "+ idprdouit +" " + "supprimé du panier  d'ID "+idpanier);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-    
+  */  
 //******************************* Afficher  lignePanier  ***********************************************//  
     
  @Override
@@ -179,6 +194,34 @@ public ArrayList<LignePanier> afficherTous() {
     }
          return lignePanier;
 }
+    
+  public List<LignePanier> AfficherPanierbyiduser(int id_user) {
+    List<LignePanier> listlp = new ArrayList<>();
+    PanierService ps = new PanierService();
+    try {
+        String sql = "SELECT p.idpanier, pr.* FROM produits pr JOIN lignepanier lp ON pr.idproduit = lp.idproduit JOIN panier p ON lp.idpanier = p.idpanier WHERE p.id_user = ?";
+        PreparedStatement psmt = cnx.prepareStatement(sql);
+        psmt.setInt(1, id_user);
+        ResultSet rs = psmt.executeQuery();
+        while (rs.next()) {
+            Produits prod = new Produits();
+            LignePanier lp = new LignePanier();
+            Panier p = ps.afficherPanierParId(rs.getInt("idpanier"));
+            lp.setPanier(p);
+            prod.setIdproduit(rs.getInt("idproduit"));
+            prod.setNom(rs.getString("nom"));
+            prod.setPrix(rs.getDouble("prix"));
+            prod.setImage(rs.getString("image"));
+            lp.setProduit(prod);
+            listlp.add(lp);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return listlp;
+}  
+  
+    
     
     
     

@@ -320,6 +320,6 @@ class __TwigTemplate_ebfbaa6332325f268ea49f470cfed4ca extends Template
         <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
     {% endblock %}
 {% endblock %}
-", "participation/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\participation\\show.html.twig");
+", "participation/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\participation\\show.html.twig");
     }
 }

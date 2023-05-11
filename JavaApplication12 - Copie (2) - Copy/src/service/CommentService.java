@@ -47,7 +47,7 @@ public void addComment(Comment co) {
             return;
         }
         
-        String insertCommentQuery = "INSERT INTO comment(Id_post, Date_Comment, Comment, ID_User) VALUES (?, ?, ?, ?)";
+        String insertCommentQuery = "INSERT INTO comment(id_post , date_comment, comment, id_user) VALUES (?, ?, ?, ?)";
         PreparedStatement insertCommentStmt = cnx.prepareStatement(insertCommentQuery);
         insertCommentStmt.setInt(1, co.getPost_c().getId_post());
         insertCommentStmt.setTimestamp(2, sqldate);
@@ -67,7 +67,7 @@ public void addComment(Comment co) {
     @Override
     public void deleteComment(int commentId) {
             try {
-            String req = "DELETE FROM comment WHERE Id_comment = ?";
+            String req = "DELETE FROM comment WHERE id_comment  = ?";
             PreparedStatement com = cnx.prepareStatement(req);
             com.setInt(1, commentId);
             int result = com.executeUpdate();
@@ -81,75 +81,11 @@ public void addComment(Comment co) {
         }
     }
 
-//    @Override
-//    public void modifyComment(Comment co) {
-//            try {
-//            String req = "UPDATE comment SET Comment = ? WHERE Id_comment = ?";
-//            PreparedStatement com = cnx.prepareStatement(req);
-//            com.setString(1, co.getComment());
-//            com.setInt(2, co.getId_comment());
-//            int result = com.executeUpdate();
-//            if (result > 0) {
-//                System.out.println("Comment modified");
-//            } else {
-//                System.out.println("No comment found with Id_comment " + co.getId_comment());
-//            }
-//        } catch (SQLException ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//    }
-
-//    @Override
-//public void modifyComment(Comment c, String newComment) {
-//    try {
-//        // check if the comment exists in the database
-//        String checkComment = "SELECT * FROM comment WHERE Id_comment=?";
-//        PreparedStatement checkCommentStmt = cnx.prepareStatement(checkComment);
-//        checkCommentStmt.setInt(1, c.getId_comment());
-//        ResultSet rs = checkCommentStmt.executeQuery();
-//        if (!rs.next()) {
-//            System.out.println("Comment does not exist in the database");
-//            return;
-//        }
-//
-//        // update the comment in the database
-//        String req = "UPDATE comment SET Comment=? WHERE Id_comment=?";
-//        PreparedStatement st = cnx.prepareStatement(req);
-//        st.setString(1, newComment);
-//        st.setInt(2, c.getId_comment());
-//        int result = st.executeUpdate();
-//        if (result > 0) {
-//            System.out.println("Comment modified successfully!");
-//        } else {
-//            System.out.println("Comment not modified");
-//        }
-//    } catch (SQLException ex) {
-//        ex.printStackTrace();
-//    }
-//}
-//    @Override
-//    public void modifyComment(Comment co, String newCommentText) {
-//    try {
-//        String req = "UPDATE comment SET Comment = ? WHERE Id_comment = ?";
-//        PreparedStatement com = cnx.prepareStatement(req);
-//        com.setString(1, newCommentText);
-//        com.setInt(2, co.getId_comment());
-//        int result = com.executeUpdate();
-//        if (result > 0) {
-//            System.out.println("Comment modified");
-//            co.setComment(newCommentText); // update the comment text in the Comment object
-//        } else {
-//            System.out.println("No comment found with Id_comment " + co.getId_comment());
-//        }
-//    } catch (SQLException ex) {
-//        System.out.println(ex.getMessage());
-//    }
-//}
     @Override
     public void modifyComment(Comment co, String newCommentText) {
         try {
             // check if the comment exists in the database
-            String checkComment = "SELECT * FROM comment WHERE Comment=?";
+            String checkComment = "SELECT * FROM comment WHERE comment=?";
             PreparedStatement checkCommentStmt = cnx.prepareStatement(checkComment);
             checkCommentStmt.setString(1, co.getComment());
             ResultSet rs = checkCommentStmt.executeQuery();
@@ -159,7 +95,7 @@ public void addComment(Comment co) {
             }
 
             // update the comment in the database
-            String req = "UPDATE comment SET Comment=? WHERE Comment=?";
+            String req = "UPDATE comment SET comment=? WHERE comment=?";
             PreparedStatement st = cnx.prepareStatement(req);
             st.setString(1, newCommentText);
             st.setString(2, co.getComment());
@@ -214,13 +150,13 @@ public void addComment(Comment co) {
                 if (rs.next()) {
                     po = new Post();
                     po.setId_post(rs.getInt("id_post"));
-                    po.setTitle(rs.getString("Title_p"));
-                    po.setMedia(rs.getString("Media"));
-                    po.setDescription_p(rs.getString("Description_p"));
+                    po.setTitle(rs.getString("title_p"));
+                    po.setMedia(rs.getString("media"));
+                    po.setDescription_p(rs.getString("description_p"));
                     po.setPost_typ(rs.getString("post_type"));
                     //po.setDate_p(rs.getDate("Date_p"));
                     Category cat = new Category();
-                    cat.setId_Category(rs.getInt("Id_Category"));
+                    cat.setId_Category(rs.getInt("id_category "));
                     po.setCategory_p(cat);
                 }
             } catch (SQLException ex) {
@@ -237,7 +173,7 @@ public void addComment(Comment co) {
         public List<Comment> fetchCommentByPostId(int postId) {
         List<Comment> comments = new ArrayList<>();
         try {
-            String query = "SELECT * FROM comment WHERE Id_post = ?";
+            String query = "SELECT * FROM comment WHERE id_post = ?";
             PreparedStatement statement = cnx.prepareStatement(query);
             statement.setInt(1, postId);
             ResultSet result = statement.executeQuery();
@@ -245,10 +181,10 @@ public void addComment(Comment co) {
                 Comment comment = new Comment();
                 //comment.setId_user(result.getInt("ID_User "));
                 Post post = new Post();
-                post.setId_post(result.getInt("Id_post"));
+                post.setId_post(result.getInt("id_post"));
                 comment.setPost_c(post);
                 //comment.setDate_comment(result.getTimestamp("Date_Comment"));
-                comment.setComment(result.getString("Comment"));
+                comment.setComment(result.getString("comment"));
                 comments.add(comment);
             }
             if (comments.isEmpty()) {
@@ -268,7 +204,7 @@ public void addComment(Comment co) {
         public List<Integer> getUserIdsByPostId(int postId) {
     List<Integer> userIds = new ArrayList<>();
     try {
-        String query = "SELECT DISTINCT ID_User FROM comment WHERE Id_post = ?";
+        String query = "SELECT DISTINCT id_user FROM comment WHERE id_post = ?";
         PreparedStatement statement = cnx.prepareStatement(query);
         statement.setInt(1, postId);
         ResultSet result = statement.executeQuery();
@@ -293,12 +229,12 @@ public int getIdCommentByComment(String comment) {
     int idComment = -1; // initialize to an invalid value
     
     try {
-        String query = "SELECT ID_comment FROM comment WHERE Comment = ?";
+        String query = "SELECT id_comment FROM comment WHERE comment = ?";
         PreparedStatement stmt = cnx.prepareStatement(query);
         stmt.setString(1, comment);
         ResultSet result = stmt.executeQuery();
         if (result.next()) {
-            idComment = result.getInt("ID_comment");
+            idComment = result.getInt("id_comment");
         }
     } catch (SQLException ex) {
         System.out.println("Error getting ID_comment: " + ex.getMessage());
@@ -311,12 +247,12 @@ public int getIdUserByCommentId(int commentId) {
     int idUser = -1; // initialize to an invalid value
     
     try {
-        String query = "SELECT ID_User FROM comment WHERE ID_comment = ?";
+        String query = "SELECT id_user FROM comment WHERE id_comment = ?";
         PreparedStatement stmt = cnx.prepareStatement(query);
         stmt.setInt(1, commentId);
         ResultSet result = stmt.executeQuery();
         if (result.next()) {
-            idUser = result.getInt("ID_User");
+            idUser = result.getInt("id_user");
         }
     } catch (SQLException ex) {
         System.out.println("Error getting ID_User: " + ex.getMessage());

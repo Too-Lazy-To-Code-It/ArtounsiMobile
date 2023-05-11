@@ -172,6 +172,6 @@ class __TwigTemplate_42b108b491c7ac0bcb27b97fbe42aad1 extends Template
 
     {{ include('lignepanier/_delete_form.html.twig') }}
 {% endblock %}
-", "lignepanier/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\lignepanier\\show.html.twig");
+", "lignepanier/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\lignepanier\\show.html.twig");
     }
 }

@@ -171,6 +171,6 @@ class __TwigTemplate_442543e11f59532c3d644c8d517d5edb extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\explain.html.twig");
     }
 }

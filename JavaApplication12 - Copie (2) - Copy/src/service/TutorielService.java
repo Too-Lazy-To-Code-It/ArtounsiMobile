@@ -127,7 +127,7 @@ public class TutorielService implements TutorielInterface {
         List<Tutoriel> tutoriels = new ArrayList<>();
         try {
 
-            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Categorie=c.id_category and t.ID_Artist=u.ID_User and u.Name = '" + NomArtist + "'";
+            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Category=c.id_category and t.ID_User=u.ID_User and u.Name = '" + NomArtist + "'";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
@@ -166,7 +166,7 @@ public class TutorielService implements TutorielInterface {
         List<Tutoriel> tutoriels = new ArrayList<>();
         try {
 
-            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Categorie=c.id_category and t.ID_Artist=u.ID_User and t.Title like '%" + title + "%'";
+            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Category=c.id_category and t.ID_User=u.ID_User and t.Title like '%" + title + "%'";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
@@ -205,7 +205,7 @@ public class TutorielService implements TutorielInterface {
         Tutoriel t = new Tutoriel();
         try {
 
-            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Categorie=c.id_category and t.ID_Artist=u.ID_User and t.ID_Tutoriel = " + ID_Tutoriel;
+            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Category=c.id_category and t.ID_User=u.ID_User and t.ID_Tutoriel = " + ID_Tutoriel;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
@@ -240,7 +240,7 @@ public class TutorielService implements TutorielInterface {
     public List<Tutoriel> fetchTutorielsByCategorie(String name) {
         List<Tutoriel> tutoriels = new ArrayList<>();
         try {
-            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.ID_Categorie=c.id_category and t.ID_Artist=u.ID_User and t.ID_Categorie= ANY(select id_category from categorie2 where name_category in " + name + ")";;
+            String req = "SELECT * FROM tutoriel as t,category as c,AllUsers as u where t.id_category=c.id_category and t.ID_User=u.ID_User and t.id_category= ANY(select id_category from category where name_category in " + name + ")";;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {

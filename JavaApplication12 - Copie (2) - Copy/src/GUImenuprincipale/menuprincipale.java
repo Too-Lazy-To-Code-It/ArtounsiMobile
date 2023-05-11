@@ -158,12 +158,13 @@ public class menuprincipale implements Initializable {
         }
     }
 
-    @FXML
+      @FXML
     private void galerie(ActionEvent event
     )throws IOException {
 
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/Explore.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/Explore.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/afficherpost.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -240,13 +241,40 @@ public class menuprincipale implements Initializable {
         }
     }
 
-    @FXML
+   @FXML
     private void blog(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/ViewBlog.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/afficherblog.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void showshop(ActionEvent event) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXML_AfficherProduit.fxml"));
+            CRUD.getChildren().add(pane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(NewFXMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void showpanier(ActionEvent event) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXML_AfficherPanier.fxml"));
+            CRUD.getChildren().add(pane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(NewFXMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @FXML
+      public void viewAddPostPage(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUIposts/Post.fxml"));
+            CRUD.getChildren().add(pane);
     }
 
 }

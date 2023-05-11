@@ -214,6 +214,6 @@ class __TwigTemplate_ff0c1f4cb413319f037dd1c01b6e008a extends Template
 
     <a href=\"{{ path('app_post_index') }}\">back to list</a>
 {% endblock %}
-", "post/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post\\show.html.twig");
+", "post/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\post\\show.html.twig");
     }
 }

@@ -79,6 +79,6 @@ class __TwigTemplate_ba7c64186169e55095c09ce5980db098 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ panier.idpanier) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "panier/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\panier\\_delete_form.html.twig");
+", "panier/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\panier\\_delete_form.html.twig");
     }
 }

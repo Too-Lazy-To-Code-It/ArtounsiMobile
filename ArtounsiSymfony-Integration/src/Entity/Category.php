@@ -66,7 +66,7 @@ class Category
      *
      * @return int
      */
-    public function getIdCategory()
+    public function getId_Category()
     {
         return $this->id_category;
     }

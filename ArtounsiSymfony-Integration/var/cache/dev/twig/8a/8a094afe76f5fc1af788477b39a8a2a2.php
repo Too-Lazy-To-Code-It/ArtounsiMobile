@@ -77,6 +77,6 @@ class __TwigTemplate_1fee979432e11cab82fbdd05b362522f extends Template
         return new Source("<form method=\"post\" action=\"{{ path('app_post_Dashboard_delete', {'id_post': post.getIdPost}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ post.getIdPost) }}\">
     <button class=\"btn\">Delete</button>
-</form>", "dashboard_home_page/_delete_post_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard_home_page\\_delete_post_form.html.twig");
+</form>", "dashboard_home_page/_delete_post_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard_home_page\\_delete_post_form.html.twig");
     }
 }

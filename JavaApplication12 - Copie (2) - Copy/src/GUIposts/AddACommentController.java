@@ -4,6 +4,7 @@ import models.Comment;
 import models.Post;
 import Service.CommentService;
 import Service.PostService;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +13,11 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class AddACommentController implements Initializable {
 
@@ -26,12 +32,12 @@ public class AddACommentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        commentService = new CommentService();
+       commentService = new CommentService();
         postService = new PostService();
     }
 
     @FXML
-    void addComment(ActionEvent event) {
+    void addComment(ActionEvent event) throws IOException {
         // Check if comment text field is not empty
         if (commentTextField.getText().isEmpty()) {
             // Show an alert if the comment field is empty
@@ -58,6 +64,15 @@ public class AddACommentController implements Initializable {
         alert.setHeaderText("Comment added");
         alert.setContentText("The comment was successfully added.");
         alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUIposts/VueCommentPost.fxml"));
+                Parent root = loader.load();
+                VueCommentPostController controller = loader.getController();
+                controller.setId_post(post.getId_post()); // set the postId in the VueCommentPostController instance
+
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();  
     }
 
     public void setId_post(int id_post) {

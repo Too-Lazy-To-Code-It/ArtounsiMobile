@@ -547,6 +547,6 @@ class __TwigTemplate_629980ec94675652436762158af601b8 extends Template
 {% endblock %}
 
 
-", "comment/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\comment\\new.html.twig");
+", "comment/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\comment\\new.html.twig");
     }
 }

@@ -285,6 +285,6 @@ class __TwigTemplate_b7f76745b16c8fed12c361d3ee978ee3 extends Template
         {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\materialize_pagination.html.twig");
+", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\materialize_pagination.html.twig");
     }
 }

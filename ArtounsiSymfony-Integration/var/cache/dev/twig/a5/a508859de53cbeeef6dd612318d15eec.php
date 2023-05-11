@@ -313,7 +313,8 @@ class __TwigTemplate_a136d4b5f1c6503329393e3f8e520bf8 extends Template
         if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 173, $this->source); })()), "image", [], "any", false, false, false, 173))) {
             // line 174
             echo "                                <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 174, $this->source); })()), "image", [], "any", false, false, false, 174))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("C:
+mpphtdocsimg" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 174, $this->source); })()), "image", [], "any", false, false, false, 174))), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 174, $this->source); })()), "nom", [], "any", false, false, false, 174), "html", null, true);
             echo "\"
@@ -485,7 +486,7 @@ class __TwigTemplate_a136d4b5f1c6503329393e3f8e520bf8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  464 => 27,  460 => 26,  456 => 25,  452 => 24,  448 => 23,  443 => 20,  433 => 19,  419 => 237,  415 => 236,  411 => 235,  405 => 232,  401 => 231,  396 => 229,  392 => 228,  357 => 196,  348 => 190,  336 => 181,  332 => 180,  329 => 179,  324 => 177,  315 => 174,  313 => 173,  295 => 158,  291 => 157,  287 => 156,  278 => 150,  274 => 149,  270 => 148,  262 => 143,  258 => 142,  254 => 141,  246 => 136,  242 => 135,  238 => 134,  228 => 128,  225 => 127,  222 => 126,  219 => 125,  216 => 124,  214 => 123,  179 => 90,  173 => 88,  167 => 86,  164 => 85,  158 => 83,  156 => 82,  152 => 81,  148 => 80,  144 => 79,  140 => 78,  136 => 77,  132 => 76,  125 => 72,  121 => 71,  117 => 70,  113 => 69,  72 => 30,  70 => 19,  64 => 16,  55 => 10,  44 => 1,);
+        return array (  465 => 27,  461 => 26,  457 => 25,  453 => 24,  449 => 23,  444 => 20,  434 => 19,  420 => 237,  416 => 236,  412 => 235,  406 => 232,  402 => 231,  397 => 229,  393 => 228,  358 => 196,  349 => 190,  337 => 181,  333 => 180,  330 => 179,  325 => 177,  315 => 174,  313 => 173,  295 => 158,  291 => 157,  287 => 156,  278 => 150,  274 => 149,  270 => 148,  262 => 143,  258 => 142,  254 => 141,  246 => 136,  242 => 135,  238 => 134,  228 => 128,  225 => 127,  222 => 126,  219 => 125,  216 => 124,  214 => 123,  179 => 90,  173 => 88,  167 => 86,  164 => 85,  158 => 83,  156 => 82,  152 => 81,  148 => 80,  144 => 79,  140 => 78,  136 => 77,  132 => 76,  125 => 72,  121 => 71,  117 => 70,  113 => 69,  72 => 30,  70 => 19,  64 => 16,  55 => 10,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -663,7 +664,7 @@ class __TwigTemplate_a136d4b5f1c6503329393e3f8e520bf8 extends Template
                             <label class=\"form-label\">Image</label>
 
                             {% if produit.image is not null %}
-                                <img src=\"{{ asset('uploads/images/' ~ produit.image) }}\" alt=\"{{ produit.nom }}\"
+                                <img src=\"{{ asset('C:\\xampp\\htdocs\\img' ~ produit.image) }}\" alt=\"{{ produit.nom }}\"
                                      style=\"border-radius: 20px; min-width: 195px;\">
                                 <br><br>
                                 <input type=\"hidden\" id=\"imageField\" name=\"imageField\" value=\"{{ produit.image }}\">
@@ -729,6 +730,6 @@ class __TwigTemplate_a136d4b5f1c6503329393e3f8e520bf8 extends Template
 <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
 
 </body>
-</html>", "produits/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits\\edit.html.twig");
+</html>", "produits/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits\\edit.html.twig");
     }
 }

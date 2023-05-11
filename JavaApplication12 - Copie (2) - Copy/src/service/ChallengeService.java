@@ -93,7 +93,7 @@ public class ChallengeService implements ChallengeInterface {
         List<Challenge> Challenges = new ArrayList<>();
         try {
             
-            String req = "SELECT * FROM Challenge ch,category ca,AllUsers u where ch.ID_Categorie = ca.id_category and ch.id_user=u.ID_user";
+            String req = "SELECT * FROM Challenge ch,category ca,AllUsers u where ch.ID_Category = ca.id_category and ch.id_user=u.ID_user";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {                

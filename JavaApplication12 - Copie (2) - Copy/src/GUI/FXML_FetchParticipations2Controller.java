@@ -76,8 +76,24 @@ public class FXML_FetchParticipations2Controller implements Initializable {
     }  
     
         private void afficher_Participations() {
+            
+        if(Logged.get_instance().getUser()==null){
+                           vbox.getChildren().remove(imported_img);
+                vbox.getChildren().remove(new_desc);
+                vbox.getChildren().remove(participate_id);
+            }
+        
+
+        if(Logged.get_instance().getUser()!=null)
+            if(Logged.get_instance().getUser().getType().equals("Observator")){
+                vbox.getChildren().remove(imported_img);
+                vbox.getChildren().remove(new_desc);
+                vbox.getChildren().remove(participate_id);
+            }
+            
         Participation_Grid.getChildren().clear();
         participations = pi.fetchParticipantionsByChallenge(c.getID_Challenge());
+        Participation p = new Participation();
         
         int columns=0;
         int rows=0;
@@ -112,6 +128,7 @@ public class FXML_FetchParticipations2Controller implements Initializable {
         Image img = new Image(file.toURI().toString());
         challenge_img.setImage(img);
         afficher_Participations();
+        
         this.p=p;
         imported_img.setText(p.getIMG_Participation());
         new_desc.setText(p.getDescription());
@@ -129,11 +146,13 @@ public class FXML_FetchParticipations2Controller implements Initializable {
         }
         else{
             if(imported){
-                Files.copy(Paths.get(src), Paths.get(dest));}
-            p.setDescription(new_desc.getText());
-            p.setParticipant(Logged.get_instance().getUser());
-            p.setChallenge(c);
-            pi.modifyParticipation(p);
+            Files.copy(Paths.get(src), Paths.get(dest));}
+            System.out.println(p);
+                        this.p.setParticipant(Logged.get_instance().getUser());
+
+            this.p.setDescription(new_desc.getText());
+            this.p.setChallenge(c);
+            pi.modifyParticipation(this.p);
             FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipation2.fxml"));
             Parent view_2=loader.load();
             FXML_FetchParticipations2Controller fetchParticipations2Controller=loader.getController();

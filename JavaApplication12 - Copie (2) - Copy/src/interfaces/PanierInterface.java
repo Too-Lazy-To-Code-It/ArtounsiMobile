@@ -21,7 +21,7 @@ public interface PanierInterface {
      public void ajouterPanier(Panier pan);
      public void modifierPanier(Panier pan, int IdPanier);
      public void supprimerPanier(int idPanier);
-     public void viderPanier();
+    public void viderPanier(int id);
      public Panier afficherPanierParId(int idPanier);
      public double calculerMontantTotal(int idPanier);
 //     public void MisàjourMontantTotal(Panier pan,int idPanier,double montant_tot );

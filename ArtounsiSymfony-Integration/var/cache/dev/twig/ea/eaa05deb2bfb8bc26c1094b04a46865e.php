@@ -141,6 +141,6 @@ class __TwigTemplate_3f1fa1b93a6a799da1a4a269479bce4e extends Template
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
     }
 }

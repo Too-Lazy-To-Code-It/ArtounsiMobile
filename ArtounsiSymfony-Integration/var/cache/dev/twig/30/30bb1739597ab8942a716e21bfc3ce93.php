@@ -1106,6 +1106,6 @@ class __TwigTemplate_644a00ab15b72ed36d3a801ddb28be71 extends Template
 {% endblock %}
 
 
-", "category/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\category\\edit.html.twig");
+", "category/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\category\\edit.html.twig");
     }
 }

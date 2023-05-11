@@ -1,5 +1,7 @@
 package controller;
 
+import GUIposts.AfficherpostController;
+import GUIposts.AfficherpostdetailsController;
 import GUIposts.ModifyPostController;
 import GUIposts.VueCommentPostController;
 import Service.PostService;
@@ -15,16 +17,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -55,6 +62,8 @@ public class Profile implements Initializable {
 
     @FXML
     private VBox tfpostlist;
+      @FXML
+    private GridPane citiesGril;
     private PostService postService;
 
     public Profile() {
@@ -108,173 +117,35 @@ public class Profile implements Initializable {
             System.out.println("No user is currently logged in.");
         }
 
-        //List<Post> posts = postService.fetchPortfolioPostDetails();
-        List<Post> posts = postService.fetchPortfolioPostDetailsOfThePortfolioCreater();
-        for (Post post : posts) {
-            VBox postBox = new VBox();
-            postBox.setStyle("-fx-border-color: black; -fx-padding: 5px;");
-            postBox.setPrefWidth(200);
-            Label titleLabel = new Label("Title: " + post.getTitle());
-
-            Label descriptionLabel = new Label("Description: " + post.getDescription_p());
-            System.out.println("tiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + post.getTitle());
-            // Load the image from the file system based on the file path stored in the database
-            String mediaPath = post.getMedia();
-            if (mediaPath != null && !mediaPath.isEmpty()) {
-                File mediaFile = new File(mediaPath);
-                if (mediaFile.exists() && mediaFile.isFile()) {
-                    ImageView mediaView = new ImageView(new Image(mediaFile.toURI().toString()));
-                    mediaView.setFitWidth(100); // set the width of the image view as needed
-                    mediaView.setFitHeight(100); // set the height of the image view as needed
-                    postBox.getChildren().add(mediaView);
-                } else {
-                    Label mediaLabel = new Label("Media: " + mediaPath);
-                    postBox.getChildren().add(mediaLabel);
-                }
+        List<Post> posts = postService.fetchPortfolioPostDetails();//change agter this to .fetchPortfolioPostDetails
+       int column=0;
+       int row = 1 ;
+       for(Post post : posts){
+           //post.setId_post(post.getId_post());
+           String title = post.getTitle();
+           int CreaterUserId =postService.getIdUserByTitle(title);
+           
+           System.out.println("aaaaaaaaaaaaaaaaaaa"+CreaterUserId);
+            System.out.println("bbbbbbbbbbbbbbbbbb"+Logged.get_instance().getUser().getID_User());
+           if(CreaterUserId==Logged.get_instance().getUser().getID_User()){
+           try {
+               FXMLLoader fxmlLoader = new FXMLLoader();
+               fxmlLoader.setLocation(getClass().getResource("/GUIposts/afficherpostdetails.fxml"));
+               Pane pane = fxmlLoader.load();
+               AfficherpostdetailsController ac = fxmlLoader.getController();
+               //ac.loaddata(post);
+               ac.loaddata(post);
+               
+               if(column==3){column=0; ++row ;}
+               citiesGril.add(pane,column++,row);
+               GridPane.setMargin(pane, new Insets(20));
+           } catch (IOException ex) {
+               Logger.getLogger(Menu1Controller.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+                Logger.getLogger(AfficherpostController.class.getName()).log(Level.SEVERE, null, ex);
             }
-
-            HBox titleBox = new HBox();
-            titleBox.getChildren().addAll(titleLabel);
-            postBox.getChildren().add(titleBox);
-
-            HBox descriptionBox = new HBox();
-            descriptionBox.getChildren().addAll(descriptionLabel);
-            postBox.getChildren().add(descriptionBox);
-
-            // Get the number of likes for this post
-            List<PostLike> likes = postService.Number_Of_Likes_For_A_Post_Post(post.getId_post());
-            int numberOfLikes = likes.size();
-            Label likesLabel = new Label("j'aime: " + numberOfLikes); // create a Label object to display the number of likes
-            postBox.getChildren().add(likesLabel);
-
-//            Button addCommentButton = new Button("Add Comment");
-//            addCommentButton.setOnAction(event -> {
-//                try {
-//                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Gui/AddAComment.fxml"));
-//                    Parent addCommentView = loader.load();
-//                    AddACommentController addCommentController = loader.getController();
-//                    addCommentController.setId_post(post.getId_post());
-//                    addCommentController.setId_user(1);
-//                    Scene scene = new Scene(addCommentView);
-//                    Stage stage = new Stage();
-//                    stage.setScene(scene);
-//                    stage.show();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            });
-//            postBox.getChildren().add(addCommentButton);
-            Button button1 = new Button("Voir Commentaires");
-
-            button1.setLayoutX(1039.0);
-            button1.setLayoutY(612.0);
-            button1.setPrefHeight(46.0);
-            button1.setPrefWidth(100.0);
-            button1.setStyle("-fx-background-color: C10C99;");
-            button1.setTextFill(Color.WHITE);
-
-            button1.setOnAction(event -> {
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUIposts/VueCommentPost.fxml"));
-                    Parent root = loader.load();
-                    VueCommentPostController controller = loader.getController();
-                    controller.setId_post(post.getId_post()); // set the postId in the VueCommentPostController instance
-
-                    Scene scene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-
-            Button deletePostButton = new Button("Supprimer Post");
-
-            deletePostButton.setLayoutX(1039.0);
-            deletePostButton.setLayoutY(612.0);
-            deletePostButton.setPrefHeight(46.0);
-            deletePostButton.setPrefWidth(100.0);
-            deletePostButton.setStyle("-fx-background-color: C10C99;");
-            deletePostButton.setTextFill(Color.WHITE);
-
-            deletePostButton.setOnAction(event -> {
-                Post p = new Post();
-                p.setTitle(post.getTitle());
-                String title = post.getTitle();
-                int CreaterUserId = postService.getIdUserByTitle(title);
-                if (CreaterUserId == Logged.get_instance().getUser().getID_User()) {
-                    postService.deletePost(post.getId_post()); // call the deletePost method to delete the post
-                    tfpostlist.getChildren().remove(postBox); // remove the VBox representing the deleted post from the main VBox
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setHeaderText("Supprimer Post");
-                    alert.setContentText("You can't delete the post, you're not the creator!");
-                    alert.showAndWait();
-                }
-            });
-
-            postBox.getChildren().add(deletePostButton);
-
-            Button ModifyPostButton = new Button("Modifier Post");
-            ModifyPostButton.setLayoutX(1039.0);
-            ModifyPostButton.setLayoutY(612.0);
-            ModifyPostButton.setPrefHeight(46.0);
-            ModifyPostButton.setPrefWidth(100.0);
-            ModifyPostButton.setStyle("-fx-background-color: C10C99;");
-            ModifyPostButton.setTextFill(Color.WHITE);
-
-            ModifyPostButton.setOnAction(event -> {
-                Post p = new Post();
-                // p.setId_post(post.getId_post()
-                // p.setId_user(currentUserId);
-                //p.setId_post(post.getId_post())
-                p.setTitle(post.getTitle());
-                p.setId_user(post.getId_user());
-
-                String title = post.getTitle();
-
-                System.out.println("hey" + post.getId_user());
-                System.out.println("id " + postService.getIdUserByTitle(title));
-                int CreaterUserId = postService.getIdUserByTitle(title);
-                if ((CreaterUserId == Logged.get_instance().getUser().getID_User())) {
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUIposts/ModifyPost.fxml"));
-                        Parent modifyPostView = loader.load();
-                        Scene scene = new Scene(modifyPostView);
-                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        stage.setScene(scene);
-                        ModifyPostController modifyPostController = loader.getController();
-
-                        // Pass the selected post object to the ModifyPostController
-                        modifyPostController.initData(post);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    //ModifyPostButton.setVisible(true);
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setHeaderText("Modify Post");
-                    alert.setContentText("You can't Modify the post, you're not the creator!");
-                    alert.showAndWait();
-                }
-            });
-            // Add the ModifyPostButton button to the postBox
-
-            postBox.getChildren().add(ModifyPostButton);
-
-            HBox buttonBox = new HBox();
-            buttonBox.getChildren().addAll(button1, ModifyPostButton, deletePostButton);
-
-            buttonBox.setSpacing(10); // Set the spacing between the buttons
-
-            VBox likesBox = new VBox();
-            likesBox.getChildren().addAll(likesLabel, buttonBox);
-            postBox.getChildren().add(likesBox);
-
-            tfpostlist.getChildren().add(postBox);
-        }
+       }
+       }
     }
 
     @FXML
@@ -286,5 +157,20 @@ public class Profile implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    public void viewAddCategoryPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/AddCategory.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void viewCategory(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/affichercategory.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
 
 }

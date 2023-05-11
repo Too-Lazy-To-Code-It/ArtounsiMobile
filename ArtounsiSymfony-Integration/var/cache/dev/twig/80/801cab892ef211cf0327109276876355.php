@@ -81,6 +81,6 @@ class __TwigTemplate_5f6ecc5a20b70fa28cab1667bcf790ba extends Template
  */
 #}
 {% extends '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig' %}
-", "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_pagination.html.twig");
+", "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_pagination.html.twig");
     }
 }

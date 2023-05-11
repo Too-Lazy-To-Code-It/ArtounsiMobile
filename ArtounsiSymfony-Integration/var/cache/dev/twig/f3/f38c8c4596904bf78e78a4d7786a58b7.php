@@ -175,6 +175,6 @@ class __TwigTemplate_3296262944b0c9e5fc0bd61cdfe033a6 extends Template
 
 {% endblock %}
 </body>
-</html>", "chat/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\chat\\index.html.twig");
+</html>", "chat/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\chat\\index.html.twig");
     }
 }

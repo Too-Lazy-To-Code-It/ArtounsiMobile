@@ -316,6 +316,6 @@ class __TwigTemplate_ac38311511bcf3b76a25ad33a2bef27d extends Template
             {% endif %}
         </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/uikit_v3_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_pagination.html.twig");
+", "@KnpPaginator/Pagination/uikit_v3_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_pagination.html.twig");
     }
 }

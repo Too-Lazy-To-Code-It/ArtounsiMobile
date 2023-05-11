@@ -161,6 +161,6 @@ class __TwigTemplate_a68ac20709a3c114dd41e037873146a5 extends Template
 
     {{ include('favoris_turoial/_delete_form.html.twig') }}
 {% endblock %}
-", "favoris_turoial/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\favoris_turoial\\show.html.twig");
+", "favoris_turoial/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\favoris_turoial\\show.html.twig");
     }
 }

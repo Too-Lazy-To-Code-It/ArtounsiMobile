@@ -1206,6 +1206,6 @@ class __TwigTemplate_27b4347ffeaf75131bd3a6cdbac75ba1 extends Template
 
 </body>
 
-</html>", "ban/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\ban\\index.html.twig");
+</html>", "ban/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\ban\\index.html.twig");
     }
 }

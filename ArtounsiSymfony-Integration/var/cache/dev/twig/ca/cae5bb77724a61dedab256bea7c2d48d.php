@@ -1292,6 +1292,6 @@ class __TwigTemplate_adad172a01478da3e2fcb030238f0db9 extends Template
     {% endblock %}
 
 
-{% endblock %}", "explore/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\explore\\index.html.twig");
+{% endblock %}", "explore/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\explore\\index.html.twig");
     }
 }

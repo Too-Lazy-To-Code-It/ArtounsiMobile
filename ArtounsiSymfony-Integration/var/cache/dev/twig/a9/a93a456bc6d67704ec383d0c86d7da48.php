@@ -140,6 +140,6 @@ class __TwigTemplate_101729ab94a7650889bf1ff6269d9bb0 extends Template
 
     {{ include('grosmots/_delete_form.html.twig') }}
 {% endblock %}
-", "grosmots/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\grosmots\\edit.html.twig");
+", "grosmots/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\grosmots\\edit.html.twig");
     }
 }

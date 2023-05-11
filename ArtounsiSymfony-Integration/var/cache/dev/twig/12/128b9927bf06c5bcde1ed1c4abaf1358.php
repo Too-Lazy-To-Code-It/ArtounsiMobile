@@ -160,6 +160,6 @@ class __TwigTemplate_10ba0a2b7312163ca4cf093b4475ef2e extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url, name: 'time', status: status_color }) }}
 {% endblock %}
-", "@WebProfiler/Collector/memory.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\memory.html.twig");
+", "@WebProfiler/Collector/memory.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\memory.html.twig");
     }
 }

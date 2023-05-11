@@ -2084,6 +2084,6 @@ class __TwigTemplate_600e3364e3f78fae578724c8bf278618 extends Template
         {{ tree.form_tree_details(childName, childData, forms_by_hash) }}
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
     }
 }

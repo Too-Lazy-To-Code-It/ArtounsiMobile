@@ -140,6 +140,6 @@ class __TwigTemplate_8340b43c063fe25f21a2a17d8f76f857 extends Template
 
     {{ include('lignepanier/_delete_form.html.twig') }}
 {% endblock %}
-", "lignepanier/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\lignepanier\\edit.html.twig");
+", "lignepanier/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\lignepanier\\edit.html.twig");
     }
 }

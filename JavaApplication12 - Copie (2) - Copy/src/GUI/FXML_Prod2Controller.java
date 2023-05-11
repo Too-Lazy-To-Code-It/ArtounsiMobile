@@ -30,6 +30,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import models.Logged;
 import service.LignePanierService;
 import service.PanierService;
 import service.ProduitService;
@@ -169,11 +170,11 @@ Panier pan= new Panier ();
         stage.show();   
         
     }
- public void ajouterProduitAuPanier(int idpanier, Produits produit) {
+ public void ajouterProduitAuPanier(int id_user, Produits produit) {
      
     LignePanierService lignePanierService = new LignePanierService();
     PanierService panierService = new PanierService();
-    Panier pan = panierService.afficherPanierParId(idpanier);
+    Panier pan = panierService.afficherPanierParId(id_user);
 
     if (pan == null) {
         System.out.println("Le panier n'existe pas");
@@ -182,7 +183,7 @@ Panier pan= new Panier ();
 
     lignePanier.setPanier(pan);
      lignePanier.getProduit().setNom(produit.getNom());
-     lignePanier.getProduit().setNom(produit.getNom());
+     lignePanier.getProduit().setImage(produit.getImage());
      lignePanier.getProduit().setPrix(produit.getPrix());
     lignePanierService.ajouterLignePanier(lignePanier);
     
@@ -193,7 +194,7 @@ Panier pan= new Panier ();
     
     @FXML
     private void ajouterAuPanier(ActionEvent event) {
-       ajouterProduitAuPanier(8,prod);   
+       ajouterProduitAuPanier(Logged.get_instance().getUser().getID_User(),prod);   
     }
 
     

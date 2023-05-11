@@ -1258,6 +1258,6 @@ class __TwigTemplate_a24c82c12eaed08bb6044d67cc493ea9 extends Template
 
 </body>
 
-</html>", "produits_back/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits_back\\index.html.twig");
+</html>", "produits_back/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits_back\\index.html.twig");
     }
 }

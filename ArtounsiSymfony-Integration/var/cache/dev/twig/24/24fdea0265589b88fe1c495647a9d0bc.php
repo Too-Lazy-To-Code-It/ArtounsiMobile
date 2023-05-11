@@ -343,6 +343,6 @@ class __TwigTemplate_66b112b1f6534a41d5391103eeb12f5c extends Template
         {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/foundation_v5_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\foundation_v5_pagination.html.twig");
+", "@KnpPaginator/Pagination/foundation_v5_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\foundation_v5_pagination.html.twig");
     }
 }

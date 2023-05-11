@@ -1264,6 +1264,6 @@ class __TwigTemplate_832fdced926a981b3dcbc8aaede97be6 extends Template
 
 </body>
 
-</html>", "offretravailarchive/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravailarchive\\index.html.twig");
+</html>", "offretravailarchive/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravailarchive\\index.html.twig");
     }
 }

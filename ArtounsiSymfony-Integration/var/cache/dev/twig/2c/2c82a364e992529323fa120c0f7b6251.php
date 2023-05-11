@@ -1011,6 +1011,6 @@ class __TwigTemplate_c252aa330a954551fdb33ed3b68a8ade extends Template
     {% endblock %}
 </body>
 
-</html>", "demandetravail/chercheroffre.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\demandetravail\\chercheroffre.html.twig");
+</html>", "demandetravail/chercheroffre.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\demandetravail\\chercheroffre.html.twig");
     }
 }

@@ -222,6 +222,6 @@ class __TwigTemplate_93db8c9bcda03d7e03d2ddb738d2f70b extends Template
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
     }
 }

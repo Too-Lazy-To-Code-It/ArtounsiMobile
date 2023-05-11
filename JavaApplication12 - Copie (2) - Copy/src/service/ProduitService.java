@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import models.Logged;
 import util.MaConnexion;
 
 /**
@@ -45,13 +46,13 @@ public  class ProduitService implements ProduitInterface{
             
             String req = "INSERT INTO `produits`(`id_user`,`id_category`,`nom`, `description`,`image` ,`prix`,`dateajout`) VALUES (?,?,?,?,?,?,?) ";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, p.getId_user());
+            ps.setInt(1,Logged.get_instance().getUser().getID_User());
             ps.setInt(2, p.getCategorieProduit().getId_Category());
             ps.setString(3, p.getNom());
             ps.setString(4, p.getDescription());
-            ps.setString(6, p.getImage());
-            ps.setDouble(7, p.getPrix());
-            ps.setTimestamp(8,sqldate);
+            ps.setString(5, p.getImage());
+            ps.setDouble(6, p.getPrix());
+            ps.setTimestamp(7,sqldate);
             ps.executeUpdate();
             System.out.println("Produit ajouté avec succés!");
             
@@ -70,13 +71,13 @@ public  class ProduitService implements ProduitInterface{
      try {
             String req = "update `produits` SET  `id_user`=?,`id_category`=?, `nom`=?,`description`=?,`image`=?,`prix`=?  where `idproduit`= ? ";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1,p.getId_user());
+            ps.setInt(1,Logged.get_instance().getUser().getID_User());
             ps.setInt(2, p.getCategorieProduit().getId_Category());
             ps.setString(3,p.getNom());
             ps.setString(4,p.getDescription());
-            ps.setString(6,p.getImage());
-            ps.setDouble(7,p.getPrix());
-            ps.setInt(8, p.getIdproduit());
+            ps.setString(5,p.getImage());
+            ps.setDouble(6,p.getPrix());
+            ps.setInt(7, p.getIdproduit());
             ps.executeUpdate();
             System.out.println("Produit modifié !");
             System.out.println("categ"+p.getCategorieProduit());

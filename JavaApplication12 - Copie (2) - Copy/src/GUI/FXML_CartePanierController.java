@@ -70,9 +70,9 @@ public class FXML_CartePanierController implements Initializable {
         this.ligneP = ligneP;
         nomProd.setText(ligneP.getProduit().getNom());
         prixProd.setText(Double.toString(ligneP.getProduit().getPrix()));
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String dateAjout = sdf.format(ligneP.getDateajout());
-        dateAj.setText(dateAjout);
+       // SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       // String dateajout = sdf.format(ligneP.getDateajout());
+       // dateAj.setText(dateajout);
         File file = new File("C:\\xampp\\htdocs\\img\\"+ligneP.getProduit().getImage());
         System.out.println("fprod"+file);
         Image img = new Image(file.toURI().toString());

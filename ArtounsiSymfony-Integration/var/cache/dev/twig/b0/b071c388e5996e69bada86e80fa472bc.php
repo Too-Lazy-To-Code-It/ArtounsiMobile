@@ -807,6 +807,6 @@ class __TwigTemplate_d83345ddbbbfb1e9ccd92ee25d64a169 extends Template
 <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
 
 </body>
-</html>", "produits/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits\\new.html.twig");
+</html>", "produits/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits\\new.html.twig");
     }
 }

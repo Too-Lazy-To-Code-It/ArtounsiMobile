@@ -81,6 +81,6 @@ class __TwigTemplate_fed7165841f6336da76be5a2f1cbac45 extends Template
 <body>
 {{ render(controller('Btba\\\\ChatBundle\\\\Controller\\\\ChatController::show')) }}
 </body>
-</html>", "chat/test.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\chat\\test.html.twig");
+</html>", "chat/test.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\chat\\test.html.twig");
     }
 }

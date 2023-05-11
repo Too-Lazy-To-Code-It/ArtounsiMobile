@@ -196,6 +196,6 @@ class __TwigTemplate_4e74d6d1cf3b1ecc5bf63ba987c30ef9 extends Template
 
     <a href=\"{{ path('app_post_like_new') }}\">Create new</a>
 {% endblock %}
-", "post_like/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\post_like\\index.html.twig");
+", "post_like/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\post_like\\index.html.twig");
     }
 }

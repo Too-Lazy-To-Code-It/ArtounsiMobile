@@ -1167,6 +1167,6 @@ class __TwigTemplate_84a2a651c3b5aa69ded09191ae3de886 extends Template
 </body>
 
 
-</html>", "ban/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\ban\\new.html.twig");
+</html>", "ban/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\ban\\new.html.twig");
     }
 }

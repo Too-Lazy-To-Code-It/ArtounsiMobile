@@ -59,6 +59,6 @@ class __TwigTemplate_7443ca592c6ede997c0981d0a3020d65 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "dashboard_home_page/EditCategory.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard_home_page\\EditCategory.html.twig");
+        return new Source("", "dashboard_home_page/EditCategory.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard_home_page\\EditCategory.html.twig");
     }
 }

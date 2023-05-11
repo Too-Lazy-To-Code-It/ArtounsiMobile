@@ -30,6 +30,7 @@ import javafx.scene.control.ChoiceBox;
 
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import models.Logged;
 import service.CategoryService;
 import service.ProduitService;
 
@@ -91,7 +92,7 @@ public class FXML_AjouterProduitController implements Initializable {
         alert.show();
         return;
     }
-
+            p.setId_user(Logged.get_instance().getUser().getID_User());
             p.setNom(nom.getText());
             p.setDescription(descp.getText());
             p.setCategorieProduit(listeCateg.getValue());
@@ -99,7 +100,7 @@ public class FXML_AjouterProduitController implements Initializable {
             System.out.println(p);
             ps.addProduit(p);
             Files.copy(Paths.get(src), Paths.get(dest));
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_Acceuil.fxml"));
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML_AfficherProduit.fxml"));
              Parent root = loader.load();
              retour.getScene().setRoot(root);
         

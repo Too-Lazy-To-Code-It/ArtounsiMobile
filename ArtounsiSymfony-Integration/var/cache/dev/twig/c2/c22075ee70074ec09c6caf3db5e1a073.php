@@ -471,6 +471,6 @@ class __TwigTemplate_8725b57548961a8b9cd5a273b088b4bb extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\twig.html.twig");
     }
 }

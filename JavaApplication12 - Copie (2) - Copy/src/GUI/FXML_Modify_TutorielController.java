@@ -17,6 +17,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -115,7 +116,7 @@ public class FXML_Modify_TutorielController implements Initializable {
            }
     }
 
-    void getTutoriel(Tutoriel t) {
+    void getTutoriel(Tutoriel t) throws ParseException {
         System.out.println(t);
         tutoriel_title.setText(t.getTitle());
         tutoriel_level.setText(String.valueOf(t.getNiveau()));
@@ -134,7 +135,7 @@ public class FXML_Modify_TutorielController implements Initializable {
         afficher_Tutoriel();
     }
     
-    private void afficher_Tutoriel() {
+    private void afficher_Tutoriel() throws ParseException {
         List<Video> videos = vi.fetchVideosByTutoriel(tutoriel.getID_Tutoriel());
             System.out.println(videos);
         int columns=0;
@@ -163,7 +164,7 @@ public class FXML_Modify_TutorielController implements Initializable {
     }
 
     @FXML
-    private void modifyTutoriel(ActionEvent event) throws IOException {
+    private void modifyTutoriel(ActionEvent event) throws IOException, ParseException {
         if(tutoriel_title.getText().length()==0||tutoriel_description.getText().length()==0
                 ){
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -131,6 +131,6 @@ class __TwigTemplate_29327f23cfa72550d9e645b92fc247f9 extends Template
     </span>
 {{ title }}
 </a>
-", "@KnpPaginator/Pagination/uikit_v3_sortable.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_sortable.html.twig");
+", "@KnpPaginator/Pagination/uikit_v3_sortable.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_sortable.html.twig");
     }
 }

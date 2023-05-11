@@ -330,6 +330,6 @@ class __TwigTemplate_2826c4957ecae5e0bf5487c2105d1f5c extends Template
         </ul>
     </nav>
 {% endif %}
-", "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_pagination.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_pagination.html.twig");
     }
 }

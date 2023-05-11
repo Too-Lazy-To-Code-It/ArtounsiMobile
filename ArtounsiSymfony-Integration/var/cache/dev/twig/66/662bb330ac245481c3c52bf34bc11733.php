@@ -154,6 +154,6 @@ class __TwigTemplate_6db29c41c8bc37411dd88945af00d474 extends Template
     </ul>
 </div>
 {% endblock %}
-", "sms/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\sms\\index.html.twig");
+", "sms/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\sms\\index.html.twig");
     }
 }

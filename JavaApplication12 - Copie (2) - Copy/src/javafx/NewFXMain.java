@@ -41,7 +41,7 @@ public class NewFXMain extends Application {
         try {
               
             root = FXMLLoader.load(getClass().getResource("/GUImenuprincipale/menuprincipale.fxml"));
-
+//root = FXMLLoader.load(getClass().getResource("/GUIposts/PostControlPanel.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("ArTounsi");
             primaryStage.setScene(scene);

@@ -180,12 +180,12 @@ class Category extends \App\Entity\Category implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getIdCategory()
+    public function getId_Category()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdCategory', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId_Category', []);
 
-        return parent::getIdCategory();
+        return parent::getId_Category();
     }
 
     /**

@@ -83,7 +83,7 @@ public class FXML_Modify_VideoController implements Initializable {
            if(selectedFile != null) {
             src = selectedFile.getPath();
             dest = "C:\\xampp\\htdocs\\videos\\"+selectedFile.getName();
-               
+            Path tmp = Files.copy(Paths.get(src), Paths.get(dest)); 
             video_name.setText(selectedFile.getName());
             video.setPathVideo(selectedFile.getName());
            } else {
@@ -123,7 +123,6 @@ public class FXML_Modify_VideoController implements Initializable {
             else {
         video.setTitle(titre.getText());
         video.setDescrption(descrption.getText());
-        Path tmp = Files.copy(Paths.get(src), Paths.get(dest)); 
         vi.modifyVideo(video);
         FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_Fetch_Tutoriels.fxml"));
         Parent view_2=loader.load();

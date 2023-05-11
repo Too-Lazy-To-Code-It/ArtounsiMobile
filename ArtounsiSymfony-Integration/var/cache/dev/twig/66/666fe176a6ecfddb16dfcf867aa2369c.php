@@ -350,6 +350,6 @@ class __TwigTemplate_b18e1ac1472c45431b5fd214098809cc extends Template
               </div>
             </div><!-- End Recent Sales -->
 
-{% endblock %}", "challenge/indexback.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\indexback.html.twig");
+{% endblock %}", "challenge/indexback.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\challenge\\indexback.html.twig");
     }
 }

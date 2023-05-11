@@ -84,6 +84,6 @@ class __TwigTemplate_407dc0799ab8bf2724b1d478295b90d5 extends Template
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "favoris_turoial/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\favoris_turoial\\_form.html.twig");
+", "favoris_turoial/_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\favoris_turoial\\_form.html.twig");
     }
 }

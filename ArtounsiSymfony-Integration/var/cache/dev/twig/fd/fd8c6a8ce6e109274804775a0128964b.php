@@ -84,6 +84,6 @@ class __TwigTemplate_2342c923683a614f6646ad6dbf44594f extends Template
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "rating_tutoriel/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\rating_tutoriel\\_form.html.twig");
+", "rating_tutoriel/_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\rating_tutoriel\\_form.html.twig");
     }
 }

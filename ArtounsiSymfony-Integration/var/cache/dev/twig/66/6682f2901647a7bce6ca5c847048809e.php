@@ -274,6 +274,6 @@ class __TwigTemplate_fe69e49a5d382abbf88e3e6260cec823 extends Template
             </div>
         </section>
 
-    </main>", "video/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\video\\_form.html.twig");
+    </main>", "video/_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\video\\_form.html.twig");
     }
 }

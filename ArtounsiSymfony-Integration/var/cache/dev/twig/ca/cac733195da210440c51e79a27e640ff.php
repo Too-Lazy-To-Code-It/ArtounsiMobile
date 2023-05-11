@@ -149,6 +149,6 @@ class __TwigTemplate_048b188b0dfb7aefdd9e4f4a2dc1a6a2 extends Template
         <button class=\"btn btn-primary\">{{ options.button }}</button>
     </div>
 </form>
-", "@KnpPaginator/Pagination/bootstrap_v5_filtration.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_filtration.html.twig");
+", "@KnpPaginator/Pagination/bootstrap_v5_filtration.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_filtration.html.twig");
     }
 }

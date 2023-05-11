@@ -135,6 +135,6 @@ class __TwigTemplate_af75ee972cc5ae1328fb5558d503c281 extends Template
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/bag.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
+", "@WebProfiler/Profiler/bag.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
     }
 }

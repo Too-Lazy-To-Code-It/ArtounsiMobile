@@ -1301,6 +1301,6 @@ class __TwigTemplate_250a34033a566ad08808dfdba363de65 extends Template
 
 </body>
 
-</html>", "dashboard/tables-data.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard\\tables-data.html.twig");
+</html>", "dashboard/tables-data.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard\\tables-data.html.twig");
     }
 }

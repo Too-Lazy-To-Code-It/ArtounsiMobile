@@ -94,6 +94,6 @@ class __TwigTemplate_9ec16f1df23034ce7635f086d1040c05 extends Template
     {{ form_errors(form.name_category) }}
     <button class=\"btn btn-primary\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "category/_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\category\\_form.html.twig");
+", "category/_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\category\\_form.html.twig");
     }
 }

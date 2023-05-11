@@ -28,102 +28,58 @@ import models.Logged;
 public class AddCommentController implements Initializable {
 
     @FXML
-    private ComboBox<Post> postsComboBox;
-
-    @FXML
     private TextField commentTextField;
 
-    @FXML
-    private TextField userIdTextField;
+    private CommentService commentService;
+    private PostService postService;
 
-    private ObservableList<Post> postsObservableList;
-    private PostInterface postService;
-    private CommentInterface commentService;
-    private Comment comment;
+    private int id_post;
+    private int id_user;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Initialize the services and the observable list of posts
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        commentService = new CommentService();
         postService = new PostService();
         commentService = new CommentService();
-        postsObservableList = FXCollections.observableArrayList();
-
-        // Fetch the posts and add their titles to the combo box
-        List<Post> posts = postService.fetchPosts();
-        if (posts != null) {
-            postsObservableList.addAll(posts);
-            postsComboBox.setItems(postsObservableList);
-            // check if the comboBox is not null
-            if (postsComboBox != null) {
-                postsComboBox.setConverter(new PostConverter());
-            }
-        }
     }
 
     @FXML
-    void addComment(ActionEvent event) throws IOException {
-        // Check if comment text field and user ID text field are not empty
-        if (commentTextField.getText().isEmpty() || userIdTextField.getText().isEmpty()) {
-            // Show an alert if either field is empty
+    void addComment(ActionEvent event) {
+        // Check if comment text field is not empty
+        System.out.println("id user"+Logged.get_instance().getUser().getID_User());
+        System.out.println("id_post"+id_post);
+        if (commentTextField.getText().isEmpty()) {
+            // Show an alert if the comment field is empty
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Missing fields");
-            alert.setContentText("Please enter a comment and a user ID.");
+            alert.setHeaderText("Missing comment");
+            alert.setContentText("Please enter a comment.");
             alert.showAndWait();
             return;
         }
 
-        // Create a new comment with the data from the form
-        comment = new Comment();
+        Comment comment = new Comment();
         comment.setComment(commentTextField.getText());
-        //comment.setId_user(Integer.parseInt(userIdTextField.getText()));
-         comment.setId_user(Logged.get_instance().getUser().getID_User());
+        comment.setId_user(Logged.get_instance().getUser().getID_User());
 
-        // Get the selected post from the combo box
-        Post selectedPost = postsComboBox.getValue();
-        String postTitle = selectedPost.getDescription_p();
+        Post c = postService.getPostById(id_post);
+        comment.setPost_c(c);
+        System.out.println("comment"+ comment.getComment());
+       commentService.addComment(comment);
 
-        // Search for the corresponding post in the database
-        postService = new PostService();
-        Post post = postService.fetchPostByTitle(postTitle);
-        comment.setPost_c(post);
-
-      /*  // Check spelling of comment text
-       SpellChecker spellChecker = new SpellChecker();
-        SpellDictionaryHashMap dictionary = new SpellDictionaryHashMap(new File("C:\\Users\\amine\\Documents\\NetBeansProjects\\Pidev_3eme\\src\\Util\\words_alpha"));
-        spellChecker.setUserDictionary(dictionary);
-        StringWordTokenizer tokenizer = new StringWordTokenizer(commentTextField.getText());
-        while (tokenizer.hasMoreWords()) {
-            String word = tokenizer.nextWord();
-            if (!spellChecker.isCorrect(word)) {
-                // Show an alert if the word is misspelled
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Misspelled word");
-                alert.setContentText("The word '" + word + "' is misspelled.");
-                alert.showAndWait();
-                return;
-            }
-        }*/
-
-        // Add the comment to the database
-        commentService.addComment(comment);
+        // Show a confirmation alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Comment added");
+        alert.setContentText("The comment was successfully added.");
+        alert.showAndWait();
     }
-    /**
-     * A custom converter that displays the title of a post in the combo box.
-     */
-    private class PostConverter extends javafx.util.StringConverter<Post> {
 
-        @Override
-        public String toString(Post post) {
-            return (post != null) ? post.getTitle() : "";
-        }
-
-        @Override
-        public Post fromString(String string) {
-            return null; // not used
-        }
+    public void setId_post(int id_post) {
+        this.id_post = id_post;
     }
-    
-    
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
 }

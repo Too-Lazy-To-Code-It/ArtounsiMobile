@@ -642,6 +642,6 @@ class __TwigTemplate_bac45336113b0e70b429b92d70616a4b extends Template
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
     }
 }

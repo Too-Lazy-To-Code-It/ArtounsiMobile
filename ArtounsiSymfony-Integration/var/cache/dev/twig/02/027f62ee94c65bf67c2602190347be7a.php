@@ -760,6 +760,6 @@ class __TwigTemplate_c1187a750492a6cf7b9f70bd5735100c extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
     }
 }

@@ -203,6 +203,6 @@ $context["attrvalue"] === false)) {
     {%- endfor -%}
 
 {% endblock star_rating_widget_container_attributes %}
-", "@StarRating/rating.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\sbyaute\\star-rating-bundle\\Resources\\views\\rating.html.twig");
+", "@StarRating/rating.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\sbyaute\\star-rating-bundle\\Resources\\views\\rating.html.twig");
     }
 }

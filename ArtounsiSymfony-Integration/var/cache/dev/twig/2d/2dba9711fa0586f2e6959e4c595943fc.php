@@ -79,6 +79,6 @@ class __TwigTemplate_32ab6999f6a55b4666e8d70f4b3ebd4c extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ category.id_category) }}\">
     <button class=\"btn btn-primary\">Delete</button>
 </form>
-", "category/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\category\\_delete_form.html.twig");
+", "category/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\category\\_delete_form.html.twig");
     }
 }

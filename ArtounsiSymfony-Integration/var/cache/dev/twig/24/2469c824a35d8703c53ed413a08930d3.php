@@ -554,6 +554,6 @@ class __TwigTemplate_4d7f68f4cf6c0572d2cbcfdd4cc2b888 extends Template
 </body>
 </html>
 
-", "video/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\video\\show.html.twig");
+", "video/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\video\\show.html.twig");
     }
 }

@@ -1400,6 +1400,6 @@ class __TwigTemplate_f66153ecba72a06b3c2482ecc3f5b261 extends Template
 
 
 {% endblock %}
-", "dashboard_home_page/details_Post_Admin.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard_home_page\\details_Post_Admin.html.twig");
+", "dashboard_home_page/details_Post_Admin.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard_home_page\\details_Post_Admin.html.twig");
     }
 }

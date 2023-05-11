@@ -38,7 +38,7 @@ public class PanierService implements PanierInterface{
     public void ajouterPanier(Panier pan) {
        
         try {
-            String req ="INSERT INTO `panier`(`nbr_produits`,`montant_total`) VALUES (?,?)";
+            String req ="INSERT INTO `panier`(`id_user`,`nbr_produits`,`montant_total`) VALUES (?,?)";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, pan.getNbr_produits());
             ps.setDouble(2, pan.getMontant_total());  
@@ -89,9 +89,9 @@ public class PanierService implements PanierInterface{
     //******************************* vider un Panier  ***********************************************//      
      
     @Override
-    public void viderPanier(){
+    public void viderPanier(int id){
       try {
-            String req = "DELETE FROM panier";
+            String req = "DELETE FROM panier where id_user ='"+id+"';";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.executeUpdate();
             System.out.println("Panier vide");
@@ -124,15 +124,15 @@ public class PanierService implements PanierInterface{
 
  //******************************* Calculer le montant total et le mettre à jour dans la base de données ***********************************************//    
     @Override
-    public double calculerMontantTotal(int idpanier) {
+    public double calculerMontantTotal(int id_user) {
     double montantTotal = 0;
     try {
         String req = "SELECT SUM(produits.prix) " +
                 "FROM lignepanier " +
                 "JOIN produits ON lignepanier.idproduit = produits.idproduit " +
-                "WHERE idpanier = ?";
+                "WHERE id_user = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
-        ps.setInt(1, idpanier);
+        ps.setInt(1, id_user);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             montantTotal = rs.getDouble(1);
@@ -144,13 +144,13 @@ public class PanierService implements PanierInterface{
     return montantTotal;
 }
   @Override
-      public void MisàjourMontantTotal(int idpanier,double montant_tot ) {
+      public void MisàjourMontantTotal(int id_user,double montant_tot ) {
       
         try {
-            String req =" UPDATE panier SET montant_total = ? WHERE idpanier = ?";
+            String req =" UPDATE panier SET montant_total = ? WHERE id_user = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setDouble(1,montant_tot);
-            ps.setDouble(2,idpanier);
+            ps.setDouble(2,id_user);
             ps.executeUpdate();
            
             System.out.println("le montant total mis à jour avec succées");
@@ -159,19 +159,19 @@ public class PanierService implements PanierInterface{
     }
  //******************************* Calculer le nombre de produit d'un meme panier ***********************************************//  
    @Override
-     public int calculerNombreProduits(int idpanier) {
+     public int calculerNombreProduits(int id_user) {
          int nbr_produits=0;
       try {
-        String req = "UPDATE panier SET nbr_produits = (SELECT COUNT(*) FROM lignepanier WHERE idpanier = ?) WHERE idpanier = ?";
+        String req = "UPDATE panier SET nbr_produits = (SELECT COUNT(*) FROM lignepanier WHERE id_user = ?) WHERE id_user = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
-        ps.setInt(1,idpanier);
-        ps.setInt(2, idpanier);
+        ps.setInt(1,id_user);
+        ps.setInt(2, id_user);
         ps.executeUpdate();
-        System.out.println("Nombre de produits mis à jour pour le panier avec ID " + idpanier);
+        System.out.println("Nombre de produits mis à jour pour le panier avec ID " + id_user);
          // récupérer le nombre de produits mis à jour depuis la base de données
         String req2 = "SELECT nbr_produits FROM panier WHERE idpanier = ?";
         PreparedStatement ps2 = cnx.prepareStatement(req2);
-        ps2.setInt(1, idpanier);
+        ps2.setInt(1, id_user);
         ResultSet rs = ps2.executeQuery();
         if (rs.next()) {
             nbr_produits = rs.getInt("nbr_produits");

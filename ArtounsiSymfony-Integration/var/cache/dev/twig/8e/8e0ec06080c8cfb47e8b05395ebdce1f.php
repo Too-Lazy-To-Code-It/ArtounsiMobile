@@ -2215,6 +2215,6 @@ class __TwigTemplate_381d29ea56f5c2053ce00f557d32dd80 extends Template
     {% endblock %}
 
 {% endblock %}
-", "dashboard_home_page/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard_home_page\\index.html.twig");
+", "dashboard_home_page/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard_home_page\\index.html.twig");
     }
 }

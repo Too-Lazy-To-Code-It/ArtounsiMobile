@@ -77,6 +77,6 @@ class __TwigTemplate_0885b42ef2ca5feb8217784e673ed727 extends Template
         return new Source("<form method=\"post\" action=\"{{ path('app_grosmots_delete', {'idMot': grosmot.idMot}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ grosmot.idMot) }}\">
  <button class=\"text-danger\"><i class=\"bi bi-trash\"></i> Supprimer</button></form>
-", "grosmots/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\grosmots\\_delete_form.html.twig");
+", "grosmots/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\grosmots\\_delete_form.html.twig");
     }
 }

@@ -12,6 +12,7 @@ import interfaces.TutorielInterface;
 import interfaces.ViewInterface;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -87,9 +88,17 @@ public class FXML_Fetch_TutorielsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-//        if(Logged.get_instance().getUser().getType().equals("Observer")){
-        if(false){
+        if(Logged.get_instance().getUser()!=null){
+            vBox.getChildren().remove(addButton);
+            vBox.getChildren().remove(showMyTutorials_id);
+            vBox.getChildren().remove(showFavoris_id);
+        }
+        if(Logged.get_instance().getUser()==null){
+            vBox.getChildren().remove(addButton);
+            vBox.getChildren().remove(showMyTutorials_id);
+        }
+        if(Logged.get_instance().getUser()!=null)
+        if(Logged.get_instance().getUser().getType().equals("Observer")){
             vBox.getChildren().remove(addButton);
             vBox.getChildren().remove(showMyTutorials_id);
         }
@@ -260,7 +269,7 @@ public class FXML_Fetch_TutorielsController implements Initializable {
     }
 
     @FXML
-    private void showHistory(MouseEvent event) {
+    private void showHistory(MouseEvent event) throws ParseException {
         showFavoris_id.setStyle("-fx-background-color: #071330; -fx-cursor:hand");
         showHistory_id.setStyle("-fx-background-color: linear-gradient(from 25px 25px to 35px 70px, #c10c99,  #071330); -fx-cursor:hand");
         showMyTutorials_id.setStyle("-fx-background-color: #071330; -fx-cursor:hand");

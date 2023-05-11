@@ -5,16 +5,20 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
+<AnchorPane prefHeight="700.0" prefWidth="1380.0" styleClass="backcolor" stylesheets="@../css/menustyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
    <children>
       <ImageView fx:id="Background" fitHeight="248.0" fitWidth="1386.0" pickOnBounds="true" preserveRatio="true" />
-      <Pane layoutY="248.0" prefHeight="29.0" prefWidth="1250.0" style="-fx-background-color: #071330;">
+      <Pane layoutY="248.0" prefHeight="29.0" prefWidth="1386.0" style="-fx-background-color: #071330;">
          <children>
-            <Button layoutX="656.0" layoutY="2.0" mnemonicParsing="false" onAction="#modifyUser" text="Modifier" />
+            <Button layoutX="644.0" layoutY="2.0" mnemonicParsing="false" onAction="#modifyUser" text="Modifier" />
+            <Button layoutX="857.0" layoutY="3.0" mnemonicParsing="false" text="afficher les catégories" />
+            <Button layoutX="714.0" layoutY="3.0" mnemonicParsing="false" onAction="#viewAddCategoryPage" text="ajouter une catégorie" />
          </children></Pane>
       <VBox layoutX="652.0" layoutY="44.0" prefHeight="196.0" prefWidth="267.0">
          <children>
@@ -29,10 +33,14 @@
             <Label fx:id="Description" text="DESCRIPTION" textFill="WHITE" />
          </children>
       </VBox>
-      <ScrollPane fitToWidth="true" layoutX="2.0" layoutY="276.0" minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefViewportHeight="500.0" prefWidth="1250.0" snapToPixel="false" styleClass="backcolor" stylesheets="@../../../../Documents/NetBeansProjects/JavaApplication1/src/css/menustyle.css" vbarPolicy="ALWAYS">
-               <content>
-                  <VBox fx:id="tfpostlist" minWidth="0.0" prefHeight="34.0" prefWidth="200.0" styleClass="backcolor" stylesheets="@../../../../Documents/NetBeansProjects/JavaApplication1/src/css/menustyle.css" />
-               </content>
-       </ScrollPane>
+      <ScrollPane layoutX="190.0" layoutY="283.0" prefHeight="402.0" prefWidth="1170.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+         <content>
+            <GridPane fx:id="citiesGril" prefHeight="50.0" prefWidth="1358.0" styleClass="backcolor" stylesheets="@../css/menustyle.css">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

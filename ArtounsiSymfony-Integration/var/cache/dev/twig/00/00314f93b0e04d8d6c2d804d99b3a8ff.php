@@ -85,6 +85,6 @@ class __TwigTemplate_21d246b59949d7f2563e3928ff577f1c extends Template
 <script id=\"botmanWidget\" src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/chat.js'></script>
 </body>
 </html>
-", "chat/frame.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\chat\\frame.html.twig");
+", "chat/frame.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\chat\\frame.html.twig");
     }
 }

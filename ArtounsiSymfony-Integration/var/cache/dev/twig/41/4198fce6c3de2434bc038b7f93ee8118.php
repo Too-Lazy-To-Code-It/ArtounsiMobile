@@ -464,6 +464,6 @@ class __TwigTemplate_ad254bfc730434d1c18eac8711cb93ae extends Template
         </footer>
     {% endblock %}
 {% endblock %}
-", "comment/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\comment\\edit.html.twig");
+", "comment/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\comment\\edit.html.twig");
     }
 }

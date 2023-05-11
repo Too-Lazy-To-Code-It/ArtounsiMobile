@@ -133,6 +133,6 @@ class __TwigTemplate_4f638f27adf6f01f2b507bebb39774eb extends Template
 
     <a href=\"{{ path('app_tutoriel_index') }}\">back to list</a>
 {% endblock %}
-", "tutoriel/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\tutoriel\\new.html.twig");
+", "tutoriel/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\tutoriel\\new.html.twig");
     }
 }

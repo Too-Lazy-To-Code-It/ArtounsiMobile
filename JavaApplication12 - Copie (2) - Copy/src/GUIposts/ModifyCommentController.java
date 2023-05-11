@@ -3,6 +3,7 @@ package GUIposts;
 import models.Comment;
 import Interfaces.CommentInterface;
 import Service.CommentService;
+import Service.PostService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,10 +33,11 @@ public class ModifyCommentController implements Initializable {
     @FXML
     private TextField NewComment;
     private Comment comment;
-    
+    private PostService postService;
     public void initData(Comment comment) {
         this.comment = comment;
         OldComment.setText(comment.getComment());
+        postService = new PostService();
     }
     
     /**
@@ -47,26 +49,36 @@ public class ModifyCommentController implements Initializable {
     }    
     
     @FXML
-    private void handleModifyComment(ActionEvent event) {
-        if (OldComment.getText().isEmpty() || NewComment.getText().isEmpty()) {
-            // Show an error message if any of the input fields are empty
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("All input fields are required.");
-            alert.showAndWait();
-        } else {
-            Comment c = new Comment();
-            c.setComment(OldComment.getText());
-            String newComment = NewComment.getText();
-            // Call the modifyComment method of the CommentService
-            cm.modifyComment(c, newComment);
-            
-        }
+private void handleModifyComment(ActionEvent event) throws IOException {
+    if (OldComment.getText().isEmpty() || NewComment.getText().isEmpty()) {
+        // Show an error message if any of the input fields are empty
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("All input fields are required.");
+        alert.showAndWait();
+    } else {
+        Comment c = new Comment();
+        c.setComment(OldComment.getText());
+        String newComment = NewComment.getText();
+        // Call the modifyComment method of the CommentService
+        cm.modifyComment(c, newComment);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUIposts/ModifyComment.fxml"));
+            Parent modifyCommentView = loader.load();
+            Scene scene = new Scene(modifyCommentView);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            ModifyCommentController modifyCommentController = loader.getController();
+
+            // Pass the selected comment object to the ModifyCommentController
+           // modifyCommentController.initData(comment);
     }
+}
+
      @FXML
      public void handleReturn(ActionEvent event) throws IOException {
-     Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/PostControlPanel.fxml"));
+     Parent root = FXMLLoader.load(getClass().getResource("/GUImenuprincipale/menuprincipale.fxml"));
      Scene scene = new Scene(root);
      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
      stage.setScene(scene);

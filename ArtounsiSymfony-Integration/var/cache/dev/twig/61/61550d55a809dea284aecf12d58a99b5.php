@@ -154,6 +154,6 @@ class __TwigTemplate_d80899e544e7d69219f7df4efc051166 extends Template
     </ul>
 </div>
 {% endblock %}
-", "produits_mobile/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits_mobile\\index.html.twig");
+", "produits_mobile/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits_mobile\\index.html.twig");
     }
 }

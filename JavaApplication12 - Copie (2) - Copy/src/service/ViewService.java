@@ -31,6 +31,7 @@ public class ViewService implements ViewInterface {
     @Override
     public void addVue(Video v) {
                 try {
+                    
             if(!vued(v))
             {
                 String req = "INSERT INTO `view`(`id_user`,`id_video`) VALUES (?,?)";

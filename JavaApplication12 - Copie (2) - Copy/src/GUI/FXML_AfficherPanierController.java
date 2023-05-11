@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.Logged;
 /**
  * FXML Controller class
  *
@@ -85,8 +86,10 @@ public class FXML_AfficherPanierController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        idPanier=8;
-        lp.afficheligne(idPanier).stream().forEach(a->list.add(a));
+        
+   //        idPanier=8;
+      list.addAll(lp.AfficherPanierbyiduser(Logged.get_instance().getUser().getID_User()));
+       // lp.afficheligne(idPanier).stream().forEach(a->list.add(a));
 //        tablePanier2.setItems(list);
         
          int column=0;
@@ -125,21 +128,21 @@ public class FXML_AfficherPanierController implements Initializable {
            }
        }
   
-         double montantTotal = pn.calculerMontantTotal(idPanier);
+         double montantTotal = pn.calculerMontantTotal(Logged.get_instance().getUser().getID_User());
          montant_total.setText(String.valueOf(montantTotal));
-         int nbrProd = pn.calculerNombreProduits(idPanier);
-         pn.MisàjourMontantTotal(idPanier,montantTotal);
+         int nbrProd = pn.calculerNombreProduits(Logged.get_instance().getUser().getID_User());
+         pn.MisàjourMontantTotal(Logged.get_instance().getUser().getID_User(),montantTotal);
          nbr_prod.setText(String.valueOf(nbrProd));
          montant_total.setText(String.valueOf(montantTotal));
          Mtotal(String.valueOf(montantTotal));
-         
+         System.out.print("mmmmmmmmmmm"+montantTotal);
     }    
     
-   public void setIdPanier(int idPanier) {
+  /* public void setIdPanier(int idPanier) {
        this.idPanier = idPanier;
      
     }
-
+*/
         public void  Mtotal(String total) {
           this.montant_total.setText(total);
         } 
@@ -151,7 +154,7 @@ public class FXML_AfficherPanierController implements Initializable {
 
     @FXML
     private void vider(ActionEvent event) {
-        pn.viderPanier();
+        pn.viderPanier(idPanier);
     }
 
   
@@ -243,7 +246,7 @@ public class FXML_AfficherPanierController implements Initializable {
     @FXML
     private void payer(ActionEvent event) throws IOException {
          // prendre le montant total à payer
-        double Montant_tot = pn.calculerMontantTotal(idPanier);
+        double Montant_tot = pn.calculerMontantTotal(Logged.get_instance().getUser().getID_User());
        
         
         FXMLLoader loader= new FXMLLoader(getClass().getResource("FXML_Payement.fxml"));

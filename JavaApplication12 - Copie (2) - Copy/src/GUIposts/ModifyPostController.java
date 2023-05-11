@@ -50,27 +50,35 @@ public class ModifyPostController implements Initializable {
         // TODO
     }    
     
-    @FXML
-    private void UpdatePost(ActionEvent event) {
-        if (PostTitle.getText().isEmpty() || NewPostTitle.getText().isEmpty() || NewDescription.getText().isEmpty()) {
-            // Show an error message if any of the input fields are empty
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("All input fields are required.");
-            alert.showAndWait();
-        } else {
-            Post p = new Post();
-            p.setTitle(PostTitle.getText());
-            String newTitle = NewPostTitle.getText();
-            String newDescription = NewDescription.getText();
-            // Call the modifyPost method of the PostService
-            st.modifyPost(p, newTitle, newDescription);
-        }
+   @FXML
+private void UpdatePost(ActionEvent event) {
+    if (PostTitle.getText().isEmpty() || NewPostTitle.getText().isEmpty() || NewDescription.getText().isEmpty()) {
+        // Show an error message if any of the input fields are empty
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("All input fields are required.");
+        alert.showAndWait();
+    } else {
+        Post p = new Post();
+        p.setTitle(PostTitle.getText());
+        String newTitle = NewPostTitle.getText();
+        String newDescription = NewDescription.getText();
+        // Call the modifyPost method of the PostService
+        st.modifyPost(p, newTitle, newDescription);
+
+        // Show a success message
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Post updated successfully!");
+        alert.showAndWait();
     }
+}
+
     @FXML
      public void handleReturn(ActionEvent event) throws IOException {
-     Parent root = FXMLLoader.load(getClass().getResource("PostControlPanel.fxml"));
+     Parent root = FXMLLoader.load(getClass().getResource("/GUImenuprincipale/menuprincipale.fxml"));
      Scene scene = new Scene(root);
      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
      stage.setScene(scene);

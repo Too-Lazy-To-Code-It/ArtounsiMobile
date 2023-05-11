@@ -81,12 +81,19 @@ public class ItemController implements Initializable {
         date.setText(challenge.getDate_C()); 
         
         this.challenge = challenge;
-        /*
+        
+        if (Logged.get_instance().getUser()==null)
+        {
+            vbox.getChildren().remove(mod_button);
+            vbox.getChildren().remove(del_button);
+        }
+        
+        if (Logged.get_instance().getUser()!=null)
         if (!(challenge.getCreator().getID_User() == Logged.get_instance().getUser().getID_User() || Logged.get_instance().getUser().getType().equals("admin")))
         {
             vbox.getChildren().remove(mod_button);
             vbox.getChildren().remove(del_button);
-        }*/
+        }
     }
     /**
      * Initializes the controller class.
@@ -132,9 +139,25 @@ public class ItemController implements Initializable {
     @FXML
     private void participate(ActionEvent event) throws IOException {
         //if(pi.Participated(challenge.getID_Challenge(), Logged.get_instance().getUser().getID_User()))
-        Participation p = pi.ParticipatedParticipation(challenge.getID_Challenge(),1);
+        System.out.println(challenge.getID_Challenge());
+        
+        
+        if (Logged.get_instance().getUser()==null)
+        {
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipation2.fxml"));
+            Parent view_2=loader.load();
+            FXML_FetchParticipations2Controller fetchParticipations2Controller=loader.getController();
+            fetchParticipations2Controller.getChallenge(challenge,p);
+            Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(view_2);
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (Logged.get_instance().getUser()!=null)
+        {
+            Participation p = pi.ParticipatedParticipation(challenge.getID_Challenge(),Logged.get_instance().getUser().getID_User());
           if(p!=null)  {
-             FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipation2.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipation2.fxml"));
             Parent view_2=loader.load();
             FXML_FetchParticipations2Controller fetchParticipations2Controller=loader.getController();
             fetchParticipations2Controller.getChallenge(challenge,p);
@@ -143,16 +166,20 @@ public class ItemController implements Initializable {
             stage.setScene(scene);
             stage.show();
                 }
-        else {
-           FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipations.fxml"));
-            Parent view_2=loader.load();
-            FXML_FetchParticipationsController fetchParticipationsController=loader.getController();
-            fetchParticipationsController.getChallenge(challenge);
-            Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(view_2);
-            stage.setScene(scene);
-            stage.show();
+            else {
+               FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_FetchParticipations.fxml"));
+                Parent view_2=loader.load();
+                FXML_FetchParticipationsController fetchParticipationsController=loader.getController();
+                fetchParticipationsController.getChallenge(challenge);
+                Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(view_2);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
+        
+        
+        
     }
     
 }

@@ -50,7 +50,7 @@ public class AddCategoryController implements Initializable {
     }
         @FXML
      public void handleReturn(ActionEvent event) throws IOException {
-     Parent root = FXMLLoader.load(getClass().getResource("/GUIposts/CategoryControlPanel.fxml"));
+     Parent root = FXMLLoader.load(getClass().getResource("/GUI/Profile.fxml"));
      Scene scene = new Scene(root);
      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
      stage.setScene(scene);

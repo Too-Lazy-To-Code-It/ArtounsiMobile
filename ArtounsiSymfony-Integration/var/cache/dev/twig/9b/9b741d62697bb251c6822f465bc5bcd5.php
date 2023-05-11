@@ -146,6 +146,6 @@ class __TwigTemplate_a29139a36f0c685f45cfc8fae323d434 extends Template
  }
 </script>
 {% endblock %}
-", "challenge/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\new.html.twig");
+", "challenge/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\challenge\\new.html.twig");
     }
 }

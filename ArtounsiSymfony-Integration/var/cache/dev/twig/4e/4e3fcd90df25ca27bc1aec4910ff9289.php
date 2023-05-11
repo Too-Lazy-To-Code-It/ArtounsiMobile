@@ -205,6 +205,6 @@ class __TwigTemplate_c7994716a57dd30ab4d0a112ee43b3a6 extends Template
 
     <a href=\"{{ path('app_lignepanier_new') }}\">Create new</a>
 {% endblock %}
-", "lignepanier/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\lignepanier\\index.html.twig");
+", "lignepanier/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\lignepanier\\index.html.twig");
     }
 }

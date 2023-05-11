@@ -102,6 +102,6 @@ class __TwigTemplate_52f6b1bf6e9f1c6ef969cf2fac6af445 extends Template
     {% if link|default(false) %}</a>{% endif %}
         <div class=\"sf-toolbar-info\">{{ text|default('') }}</div>
 </div>
-", "@WebProfiler/Profiler/toolbar_item.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_item.html.twig");
+", "@WebProfiler/Profiler/toolbar_item.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_item.html.twig");
     }
 }

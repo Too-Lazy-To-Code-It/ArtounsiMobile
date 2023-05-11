@@ -926,6 +926,6 @@ https://templatemo.com/tm-577-liberty-market
     <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
 
 </body>
-", "panier/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\panier\\index.html.twig");
+", "panier/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\panier\\index.html.twig");
     }
 }

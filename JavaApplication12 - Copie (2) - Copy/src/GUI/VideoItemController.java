@@ -71,7 +71,17 @@ public class VideoItemController implements Initializable {
     }    
 
     void setData(Video video,Tutoriel tutoriel) throws ParseException {
-        System.out.println(video);
+        if(Logged.get_instance().getUser()==null){
+            vbox.getChildren().remove(modifyVideo);
+            vbox.getChildren().remove(deletevideo);
+        }
+        
+        if(Logged.get_instance().getUser()!=null)
+            if(!(Logged.get_instance().getUser().getType().equals("Admin") || Logged.get_instance().getUser().getID_User()==tutoriel.getCreator().getID_User())){
+                vbox.getChildren().remove(modifyVideo);
+                vbox.getChildren().remove(deletevideo);
+            }
+        
         File file = new File("C:\\xampp\\htdocs\\img\\"+video.getPathImage());
         Image img = new Image(file.toURI().toString());
         
@@ -94,7 +104,10 @@ public class VideoItemController implements Initializable {
     @FXML
     private void showVideo(MouseEvent event) {
         try {
-        vvi.addVue(video);
+        if(Logged.get_instance().getUser()!=null){
+            vvi.addVue(video);
+        }
+        
         FXMLLoader loader= new FXMLLoader(getClass().getResource("./VideoView.fxml"));
         Parent view_2=loader.load();
         VideoViewController video_ViewController=loader.getController();

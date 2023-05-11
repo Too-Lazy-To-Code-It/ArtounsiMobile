@@ -403,6 +403,6 @@ class __TwigTemplate_2f4778cf0cc95bbb9786dcb1481d3b44 extends Template
     </main>
 
 {% endblock %}
-", "tutoriel/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\tutoriel\\edit.html.twig");
+", "tutoriel/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\tutoriel\\edit.html.twig");
     }
 }

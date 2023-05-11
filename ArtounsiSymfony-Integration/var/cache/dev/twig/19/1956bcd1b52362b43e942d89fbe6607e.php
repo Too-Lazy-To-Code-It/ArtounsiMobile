@@ -154,6 +154,6 @@ class __TwigTemplate_468d2dd84333d22bcb008f7093bcc80b extends Template
     </ul>
 </div>
 {% endblock %}
-", "studiodashboard/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\studiodashboard\\index.html.twig");
+", "studiodashboard/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\studiodashboard\\index.html.twig");
     }
 }

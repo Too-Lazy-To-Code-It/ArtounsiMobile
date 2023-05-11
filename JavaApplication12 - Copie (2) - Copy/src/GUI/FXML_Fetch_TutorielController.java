@@ -13,6 +13,7 @@ import interfaces.VideoInterface;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -76,6 +77,10 @@ public class FXML_Fetch_TutorielController implements Initializable {
     private Button modify_but;
     @FXML
     private Button delete_but;
+    @FXML
+    private ImageView icon;
+    @FXML
+    private Label text;
     /**
      * Initializes the controller class.
      */
@@ -83,7 +88,7 @@ public class FXML_Fetch_TutorielController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
         
-        private void afficher_Tutoriel() {
+        private void afficher_Tutoriel() throws ParseException {
         List<Video> videos = vi.fetchVideosByTutoriel(t.getID_Tutoriel());
         System.out.println("v : "+videos);
         int columns=0;
@@ -123,7 +128,7 @@ public class FXML_Fetch_TutorielController implements Initializable {
     }
 
     @FXML
-    private void modifyTutoriel(ActionEvent event) throws IOException {
+    private void modifyTutoriel(ActionEvent event) throws IOException, ParseException {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("./FXML_Modify_Tutoriel.fxml"));
         Parent view_2=loader.load();
         FXML_Modify_TutorielController Modify_TutorielController=loader.getController();
@@ -146,12 +151,13 @@ public class FXML_Fetch_TutorielController implements Initializable {
         
     }
 
-    void setTutorial(Tutoriel tutoriel) {
+    void setTutorial(Tutoriel tutoriel) throws ParseException {
         Image emptystar = new Image(getClass().getResourceAsStream("/img/emptystar.png"));
         Image star = new Image(getClass().getResourceAsStream("/img/star.png"));
-        /*if(!ft.favorated(tutoriel))
-            star_img.setImage(emptystar);
-        else star_img.setImage(star);*/
+        if(Logged.get_instance().getUser()!=null)
+            if(!ft.favorated(tutoriel))
+                star_img.setImage(emptystar);
+            else star_img.setImage(star);
         tutorial_categorie.setText(tutoriel.getCategorie().getName_category());
         tutoriel_title.setText(tutoriel.getTitle());
         tutoriel_description.setText(tutoriel.getDescription());
@@ -162,11 +168,19 @@ public class FXML_Fetch_TutorielController implements Initializable {
         this.t = tutoriel;
         afficher_Tutoriel();
         
-        /* if(!(Logged.get_instance().getUser().getType().equals("Admin") || Logged.get_instance().getUser().getID_User()==t.getCreator().getID_User())){
-            vbox.getChildren().remove(delete_but);
-            vbox.getChildren().remove(modify_but);
-            hbox.getChildren().remove(addButton);
-        }*/
+        if(Logged.get_instance().getUser()==null){
+                vbox.getChildren().remove(delete_but);
+                vbox.getChildren().remove(modify_but);
+                hbox.getChildren().remove(addButton);
+            }
+        
+
+        if(Logged.get_instance().getUser()!=null)
+            if(!(Logged.get_instance().getUser().getType().equals("Admin") || Logged.get_instance().getUser().getID_User()==t.getCreator().getID_User())){
+                vbox.getChildren().remove(delete_but);
+                vbox.getChildren().remove(modify_but);
+                hbox.getChildren().remove(addButton);
+            }
     }
 
     @FXML

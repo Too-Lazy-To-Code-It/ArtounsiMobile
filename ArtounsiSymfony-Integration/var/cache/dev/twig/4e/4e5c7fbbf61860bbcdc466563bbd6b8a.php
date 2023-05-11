@@ -81,6 +81,6 @@ class __TwigTemplate_bc2a29477aea41db8748e18579b837ca extends Template
   
      <button class=\"text-danger\"><i class=\"bi bi-trash\"></i> Récuperer</button>
 </form>
-", "offretravailarchive/_recuperer_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravailarchive\\_recuperer_form.html.twig");
+", "offretravailarchive/_recuperer_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravailarchive\\_recuperer_form.html.twig");
     }
 }

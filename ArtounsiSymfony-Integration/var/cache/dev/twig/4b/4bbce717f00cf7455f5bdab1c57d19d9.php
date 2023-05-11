@@ -1717,6 +1717,6 @@ text-alig
 
 </body>
 
-</html>", "offretravail/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravail\\index.html.twig");
+</html>", "offretravail/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravail\\index.html.twig");
     }
 }

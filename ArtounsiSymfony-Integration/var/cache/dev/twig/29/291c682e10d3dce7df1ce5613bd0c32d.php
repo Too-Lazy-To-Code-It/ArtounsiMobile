@@ -140,6 +140,6 @@ class __TwigTemplate_f4a3a4ef3425c2a2a02acc2fa43751ea extends Template
 
     {{ include('participation/_delete_form.html.twig') }}
 {% endblock %}
-", "participation/edit.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\participation\\edit.html.twig");
+", "participation/edit.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\participation\\edit.html.twig");
     }
 }

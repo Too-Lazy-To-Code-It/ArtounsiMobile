@@ -76,6 +76,6 @@ class __TwigTemplate_5e671d43588e6cb9ae7188365d8d088d extends Template
     <input type=\"hidden\" name=\"_method\" value=\"POST\">
     <button type=\"submit\">Vider le panier</button>
 </form>
-", "panier/viderPanier.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\panier\\viderPanier.html.twig");
+", "panier/viderPanier.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\panier\\viderPanier.html.twig");
     }
 }

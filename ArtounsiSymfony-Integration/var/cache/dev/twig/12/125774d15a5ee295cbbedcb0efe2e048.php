@@ -879,6 +879,6 @@ class __TwigTemplate_9a0ddc255f1b0df946a325aae0290203 extends Template
                 </div>
             </div>
         </footer>
-    {% endblock %}", "challenge/participation.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\participation.html.twig");
+    {% endblock %}", "challenge/participation.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\challenge\\participation.html.twig");
     }
 }

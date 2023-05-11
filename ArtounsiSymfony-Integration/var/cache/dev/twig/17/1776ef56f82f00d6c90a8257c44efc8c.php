@@ -81,6 +81,6 @@ class __TwigTemplate_efc5947a56964449846010ad93524441 extends Template
   
      <button class=\"text-danger\"><i class=\"bi bi-trash\"></i> Supprimer</button>
 </form>
-", "offretravailarchive/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravailarchive\\_delete_form.html.twig");
+", "offretravailarchive/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravailarchive\\_delete_form.html.twig");
     }
 }

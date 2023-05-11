@@ -149,6 +149,6 @@ class __TwigTemplate_bb2c01c1c094d46215576997929639f7 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url }) }}
 {% endblock %}
-", "@WebProfiler/Profiler/cancel.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\cancel.html.twig");
+", "@WebProfiler/Profiler/cancel.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\cancel.html.twig");
     }
 }

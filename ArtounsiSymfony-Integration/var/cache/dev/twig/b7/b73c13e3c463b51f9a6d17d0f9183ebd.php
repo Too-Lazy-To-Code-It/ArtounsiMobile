@@ -643,6 +643,6 @@ class __TwigTemplate_9456f3d660809ff644590a5fd1374022 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\notifier.html.twig");
     }
 }

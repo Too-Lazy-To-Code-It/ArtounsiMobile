@@ -133,6 +133,6 @@ class __TwigTemplate_1b724fec5034a2fef2b40fc4395c1b52 extends Template
 
     <a href=\"{{ path('app_lignepanier_index') }}\">back to list</a>
 {% endblock %}
-", "lignepanier/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\lignepanier\\new.html.twig");
+", "lignepanier/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\lignepanier\\new.html.twig");
     }
 }

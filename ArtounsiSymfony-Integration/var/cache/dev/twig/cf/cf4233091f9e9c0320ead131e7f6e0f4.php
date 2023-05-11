@@ -196,6 +196,6 @@ class __TwigTemplate_3d9466a9bde1d183cbe0a8167b4d7635 extends Template
         </a>
     {% endif %}
 </div>
-", "@KnpPaginator/Pagination/semantic_ui_pagination.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_pagination.html.twig");
+", "@KnpPaginator/Pagination/semantic_ui_pagination.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_pagination.html.twig");
     }
 }

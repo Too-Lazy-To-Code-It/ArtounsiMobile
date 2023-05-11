@@ -11,6 +11,8 @@ import models.Produits;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -34,6 +36,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import models.Logged;
 import service.CategoryService;
 import service.ProduitService;
 
@@ -47,8 +50,9 @@ public class FXML_ModifierProduitController implements Initializable {
      CategoryService cs= new CategoryService() {};
      Produits p= new Produits();
   
- 
-
+    private  Boolean  test;
+    private String src;
+    private String dest;
     @FXML
     private Button modifier;
     @FXML
@@ -85,6 +89,8 @@ public class FXML_ModifierProduitController implements Initializable {
     private ImageView imgVNew;
     @FXML
     private Label nomimageNew;
+    @FXML
+    private Button imp;
     
     /**
      * Initializes the controller class.
@@ -107,7 +113,6 @@ public class FXML_ModifierProduitController implements Initializable {
        
      public void getProd(Produits p) {
         this.produit = p;
-        p = ps.readById(p.getIdproduit());
         RecNom.setText(p.getNom());
         Recdescription.setText(p.getDescription());
         RcPrix.setText(Double.toString(p.getPrix()));
@@ -157,13 +162,12 @@ public class FXML_ModifierProduitController implements Initializable {
         alert.show();
         return;
        } else{
-      
+        produit.setId_user(Logged.get_instance().getUser().getID_User());
         produit.setNom(nom.getText());
         produit.setDescription(description.getText());
         produit.setCategorieProduit(listeCateg.getValue());
         produit.setPrix(Double.parseDouble(prixText.getText()));
-        produit.setImage(nomimageNew.getText());
-  
+         Files.copy(Paths.get(src), Paths.get(dest));
         File file = new File("C:\\xampp\\htdocs\\img\\"+p.getImage());
         Image img = new Image(file.toURI().toString());
         imgVNew.setImage(img);
@@ -223,15 +227,24 @@ public class FXML_ModifierProduitController implements Initializable {
 
      @FXML
     private void ImporterImage(ActionEvent event) {
-        FileChooser open=new FileChooser();
-        Stage stage=(Stage) anchore.getScene().getWindow();
-        File file=open.showOpenDialog(stage);
-        if(file!=null){
-            String filename=file.getName();
-            nomimageNew.setText(filename);
-            Image img=new Image(file.toURI().toString());
-            imgVNew.setImage(img);
-    }
+                   FileChooser fc = new FileChooser();
+           FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG Files","*.png");
+           FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG Files","*.jpg");
+
+           fc.getExtensionFilters().addAll(extFilterPNG,extFilterJPG);
+           
+           File selectedFile = fc.showOpenDialog(null);
+           
+           if(selectedFile != null) {
+               src = selectedFile.getPath();
+               dest = "C:\\xampp\\htdocs\\img\\"+selectedFile.getName();
+               imp.setText(selectedFile.getName());
+               p.setImage(selectedFile.getName());
+               test = true;
+               produit.setImage(selectedFile.getName());
+           } else {
+               System.err.println("file is not valid");
+           }
     }
 
     @FXML

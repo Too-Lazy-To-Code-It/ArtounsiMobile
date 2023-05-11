@@ -83,7 +83,7 @@ public void addCategory2(Category c) {
     @Override
 public void deleteCategoryById(int id) {
     try {
-        String req = "DELETE FROM category WHERE Id_Category = ?";
+        String req = "DELETE FROM category WHERE id_category = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setInt(1, id);
         ps.executeUpdate();
@@ -141,7 +141,7 @@ public void deleteCategoryById(int id) {
     public Category fetchCategoryById(int id) {
         Category category = null;
         try {
-            String req = "SELECT * FROM category WHERE id_Category=?";
+            String req = "SELECT * FROM category WHERE id_category=?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -180,7 +180,7 @@ public void deleteCategoryById(int id) {
     public Category fetchCategoryByNom(String nom) {
       Category categorie = null;
         try {
-            String req = "SELECT * FROM category WHERE name_Category=?";
+            String req = "SELECT * FROM category WHERE name_category=?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setString(1,nom);
             ResultSet rs = ps.executeQuery();

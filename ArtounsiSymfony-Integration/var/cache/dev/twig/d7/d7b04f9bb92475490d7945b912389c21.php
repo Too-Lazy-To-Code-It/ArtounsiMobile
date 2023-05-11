@@ -2391,6 +2391,6 @@ class __TwigTemplate_fb2e5e575b7202599d12807f574ef98f extends Template
 {% endblock %}
 </body>
 
-</html>", "dashboard/studiodashboard.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\dashboard\\studiodashboard.html.twig");
+</html>", "dashboard/studiodashboard.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\dashboard\\studiodashboard.html.twig");
     }
 }

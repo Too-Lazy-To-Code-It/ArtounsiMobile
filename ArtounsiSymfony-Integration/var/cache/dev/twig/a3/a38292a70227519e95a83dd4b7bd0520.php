@@ -79,6 +79,6 @@ class __TwigTemplate_08690b3f62517815c905c59184e2048c extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('deleteBack' ~ produit.idproduit) }}\">
     <button class=\"btn\" class=\"main-button\" >Supprimer</button>
 </form>
-", "produits_back/_delete_form.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\produits_back\\_delete_form.html.twig");
+", "produits_back/_delete_form.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\produits_back\\_delete_form.html.twig");
     }
 }

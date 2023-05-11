@@ -98,6 +98,6 @@ class __TwigTemplate_39e30fc86232010d76eb053c914a9132 extends Template
     {{ include('offretravail/_form.html.twig') }}
 
 {% endblock %}
-", "offretravail/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\offretravail\\new.html.twig");
+", "offretravail/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\offretravail\\new.html.twig");
     }
 }

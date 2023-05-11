@@ -320,6 +320,6 @@ class __TwigTemplate_781549b562929bbad3b191884fc44745 extends Template
 
     <a href=\"{{ path('app_allusers_new') }}\">Create new</a>
 {% endblock %}
-", "allusers/index.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\allusers\\index.html.twig");
+", "allusers/index.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\allusers\\index.html.twig");
     }
 }

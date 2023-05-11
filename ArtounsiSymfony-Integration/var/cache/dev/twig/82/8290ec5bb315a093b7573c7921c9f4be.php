@@ -133,6 +133,6 @@ class __TwigTemplate_0291fa30728daa8ef4ef5d807b7fdeb0 extends Template
 
     <a href=\"{{ path('app_rating_index') }}\">back to list</a>
 {% endblock %}
-", "rating/new.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\rating\\new.html.twig");
+", "rating/new.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\rating\\new.html.twig");
     }
 }

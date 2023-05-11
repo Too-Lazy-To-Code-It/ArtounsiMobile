@@ -1342,6 +1342,6 @@ class __TwigTemplate_fd7676b21cc9623d239206cd17edbaed extends Template
         <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
     {% endblock %}
 
-{% endblock %}", "challenge/show.html.twig", "C:\\Esprit\\PIDEV\\Codewiljaw\\Symfony\\Artounsi\\templates\\challenge\\show.html.twig");
+{% endblock %}", "challenge/show.html.twig", "C:\\Users\\achref\\Documents\\finalEsprit\\ArtounsiSymfony-Integration\\templates\\challenge\\show.html.twig");
     }
 }
