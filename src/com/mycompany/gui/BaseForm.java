@@ -32,6 +32,7 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.layouts.Layout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
+import com.mycompany.service.UserService;
 
 /**
  * Base class for the forms with common functionality
@@ -88,8 +89,10 @@ public class BaseForm extends Form {
         tb.addMaterialCommandToSideMenu("Tutoriels", FontImage.MATERIAL_DASHBOARD, e -> new ShowTutorielsForm(res).show());
         tb.addMaterialCommandToSideMenu("SHOP", FontImage.MATERIAL_UPDATE, e -> new AfficherProdForm(res).show());
         tb.addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new AfficherPanier(res).show());
-        tb.addMaterialCommandToSideMenu("offres", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showoffres(res).show());
-      tb.addMaterialCommandToSideMenu("demandes", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showdemandes(res).show());
+        
+         tb.addMaterialCommandToSideMenu("offres", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showoffres(res).show());
+       
+          tb.addMaterialCommandToSideMenu("demandes", FontImage.MATERIAL_EXIT_TO_APP, e -> new Showdemandes(res).show());
       tb.addMaterialCommandToSideMenu("home page", FontImage.MATERIAL_EXIT_TO_APP, e ->new NewsfeedForm(res).show());
       tb.addMaterialCommandToSideMenu("Ajouter une publication", FontImage.MATERIAL_EXIT_TO_APP, e ->new AddPost(res).show());
       tb.addMaterialCommandToSideMenu("Map", FontImage.MATERIAL_EXIT_TO_APP, e ->new MapForm(res));

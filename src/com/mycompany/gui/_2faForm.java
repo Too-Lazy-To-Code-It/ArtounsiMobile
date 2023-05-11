@@ -73,7 +73,7 @@ public class _2faForm extends BaseForm {
                 System.out.println(verif);
                 if (verif == Integer.parseInt(code.getText())) {
                     System.out.println("CODE SHYHYYHYHYHYHYHYHYHYHYHYH");
-                    new ProfileForm(res).show();
+                    new NewsfeedForm(res).show();
                 }
             } else {
                 Dialog.show("ERROR", "Server error", new Command("ok"));

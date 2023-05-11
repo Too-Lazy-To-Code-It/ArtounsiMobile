@@ -39,10 +39,13 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.ImageIO;
 import com.codename1.ui.util.Resources;
+import com.mycompany.entites.Category;
+import com.mycompany.service.ServiceCategory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 /**
  *
@@ -78,11 +81,18 @@ public class ModifyTutorielForm extends BaseForm {
         
         Slider stars = createStarRankSlider();
         stars.setProgress(t.getNiveau());
-        
-        String[] characters = {"2d", "3d" /* cropped */};
+                ArrayList<Category> categories;
+        ServiceCategory sc = new ServiceCategory();
+        categories = (ArrayList<Category>) sc.fetchCategory();
+
+// Create an array of category names
+        String[] categoryNames = new String[categories.size()];
+        for (int i = 0; i < categories.size(); i++) {
+        categoryNames[i] = categories.get(i).getName_category();
+}
         Picker categorie = new Picker();
-        categorie.setStrings(characters);
-        categorie.setSelectedString(characters[0]);
+        categorie.setStrings(categoryNames);
+        categorie.setSelectedString(categoryNames[0]);
         categorie.addActionListener(e -> ToastBar.showMessage("You picked " + categorie.getSelectedString() + "category", FontImage.MATERIAL_INFO));
 
         titleTF.setSingleLineTextArea(false);

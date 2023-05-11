@@ -42,5 +42,13 @@ public class Category {
     public Category(String name_category) {
         this.name_category = name_category;
     }
+
+    @Override
+    public String toString() {
+        return  name_category ;
+    }
+   
+    
+    
     
 }

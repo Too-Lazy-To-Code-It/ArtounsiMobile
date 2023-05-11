@@ -71,7 +71,7 @@ public class SignInForm extends BaseForm {
             if(verif!= 0)
                 new _2faForm(res,verif).show();
             else
-                new ProfileForm(res).show();
+                new NewsfeedForm(res).show();
         });
     }
 

@@ -32,6 +32,9 @@ import com.codename1.ui.plaf.Border;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
+import com.mycompany.entites.Category;
+import com.mycompany.service.ServiceCategory;
+import java.util.ArrayList;
 
 /**
  *
@@ -60,11 +63,19 @@ public class AddTutorielForm extends BaseForm {
         Label sec = new Label("Selectionner un categorie");
 
         Slider stars = createStarRankSlider();
+        
+        ArrayList<Category> categories;
+        ServiceCategory sc = new ServiceCategory();
+        categories = (ArrayList<Category>) sc.fetchCategory();
 
-        String[] characters = {"2d", "3d" /* cropped */};
+// Create an array of category names
+        String[] categoryNames = new String[categories.size()];
+        for (int i = 0; i < categories.size(); i++) {
+        categoryNames[i] = categories.get(i).getName_category();
+}
         Picker categorie = new Picker();
-        categorie.setStrings(characters);
-        categorie.setSelectedString(characters[0]);
+        categorie.setStrings(categoryNames);
+        categorie.setSelectedString(categoryNames[0]);
         categorie.addActionListener(e -> ToastBar.showMessage("tu as selectionner " + categorie.getSelectedString() + "category", FontImage.MATERIAL_INFO));
 
         titleTF.setSingleLineTextArea(false);
